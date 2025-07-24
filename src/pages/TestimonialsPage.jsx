@@ -49,7 +49,7 @@ export default function TestimonialsPage() {
             <div className="bg-white border border-gray-200 p-6 rounded-xl shadow relative">
               <FaQuoteLeft className="text-blue-200 text-3xl absolute -top-3 -left-3 opacity-20" />
               <p className="text-sm md:text-base mb-4">
-                "If you need an air conditioning and heating expert you can rely on, I highly recommend Josh at AMW Cooling & Heating (936.587.7612).
+                "If you need an air conditioning and heating expert you can rely on, I highly recommend Josh at AMW Cooling & Heating (936.331.1339).
                 Josh is a U.S. Army veteran who brings the same pride, discipline, and attention to detail from his service into his work.
                 When I needed someone to review the HVAC installation in my newly built home, Josh exceeded my expectations. He sat down with us, explained every aspect of our system,
                 conducted a thorough inspection, and shared practical options—always emphasizing what he would do if it were his own house."

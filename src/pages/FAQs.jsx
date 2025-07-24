@@ -41,7 +41,7 @@ const faqs = [
         answer: (
           <span>
             Absolutely! We offer after hours emergency HVAC services between the hours of 5pm-9pm because we know comfort can’t wait.{' '}
-            <a href="tel:9365877612" className="text-blue-600 underline hover:text-orange-500">Call us anytime at (936) 587-7612</a> for quick and reliable help. *Additional charges may apply*
+            <a href="tel:9363311339" className="text-blue-600 underline hover:text-orange-500">Call us anytime at (936) 331-1339</a> for quick and reliable help. *Additional charges may apply*
           </span>
         ),
       },
@@ -94,7 +94,7 @@ const faqs = [
           <span>
             It’s easy!{' '}
             <a href="/contact" className="text-blue-600 underline hover:text-orange-500">Contact us</a> through our website or call{' '}
-            <a href="tel:9365877612" className="text-blue-600 underline hover:text-orange-500">(936) 587-7612</a> to speak with our team. We’ll find a time that works best for you.
+            <a href="tel:9363311339" className="text-blue-600 underline hover:text-orange-500">(936) 331-1339</a> to speak with our team. We’ll find a time that works best for you.
           </span>
         ),
       },
@@ -217,7 +217,7 @@ const faqs = [
         answer: (
           <span>
             We pride ourselves on fast response times, including same-day and emergency services.{' '}
-            <a href="tel:9365877612" className="text-blue-600 underline hover:text-orange-500">Call us now at (936) 587-7612</a> for immediate help.
+            <a href="tel:9363311339" className="text-blue-600 underline hover:text-orange-500">Call us now at (936) 331-1339</a> for immediate help.
           </span>
         ),
       },
@@ -405,7 +405,7 @@ const faqs = [
           <span>
             Applying is easy—just{' '}
             <a href="/contact" className="text-blue-600 underline hover:text-orange-500">contact us</a> or call{' '}
-            <a href="tel:9365877612" className="text-blue-600 underline hover:text-orange-500">(936) 587-7612</a>. We’ll walk you through the process and help you find the best option.
+            <a href="tel:9363311339" className="text-blue-600 underline hover:text-orange-500">(936) 331-1339</a>. We’ll walk you through the process and help you find the best option.
           </span>
         ),
       },

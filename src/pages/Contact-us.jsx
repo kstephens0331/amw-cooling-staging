@@ -77,7 +77,7 @@ export default function Contact() {
           {/* Business Contact Info */}
           <div className="flex-1 text-sm md:text-base bg-gray-50 p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4 text-blue-900">Reach Us Directly</h2>
-            <p className="mb-2"><strong>Phone:</strong> <a href="tel:9365877612">(936) 587-7612</a></p>
+            <p className="mb-2"><strong>Phone:</strong> <a href="tel:9363311339">(936) 331-1339 </a></p>
             <p className="mb-2"><strong>Email:</strong> <a href="mailto:admin@amwairconditioning.com">admin@amwairconditioning.com</a></p>
             <p className="mb-2"><strong>Location:</strong> Conroe, TX</p>
             <p className="mt-4 text-s text-gray-500">Veteran-owned and proud to serve Conroe, The Woodlands, Spring, Willis, and surrounding areas.</p>

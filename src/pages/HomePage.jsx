@@ -33,7 +33,7 @@ export default function HomePage() {
       "name": "AMW Cooling & Heating LLC",
       "image": "https://amwairconditioning.com/images/FullLogo_Transparent.webp",
       "url": "https://amwairconditioning.com",
-      "telephone": "+1-936-587-7612",
+      "telephone": "+1-936-331-1339",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Conroe",
