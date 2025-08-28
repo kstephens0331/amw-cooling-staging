@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import InstantContact from './components/InstantContact';
 import ChatBot from './components/ChatBot';
 import { pageview } from './utils/analytics';
+import IncentiveBanner from './components/IncentiveBanner';
 
 
 // Lazy-loaded pages
@@ -19,6 +20,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const HeroLandingPage = lazy(() => import('./components/HeroLandingPage'));
 const ContactUsDuplicate = lazy(() => import('./pages/Contact-us'));
+
 
 function ScrollAndTrack() {
   const location = useLocation();
@@ -38,6 +40,7 @@ function App() {
       <Router>
         <ScrollAndTrack />
         <Navbar />
+        <IncentiveBanner />
         <Routes>
           <Route
     path="/"
