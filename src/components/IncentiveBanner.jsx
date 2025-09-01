@@ -45,7 +45,7 @@ const IncentiveBanner = () => {
         {/* Copy */}
         <div className="flex-1">
           <p className="text-sm md:text-base font-semibold">
-            🔥 September Special: <span className="underline decoration-white/60">Service Calls Only $49 - *Does not include afater hours*</span>
+            🔥 September Special: <span className="underline decoration-white/60">Service Calls Only $49 - *Does not include after hours*</span>
           </p>
           <p className="text-[12px] md:text-sm text-white/90">
             Book by Sep 30 · Conroe, The Woodlands, Spring & nearby · Licensed & insured · Veteran-owned
