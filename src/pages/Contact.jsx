@@ -20,7 +20,7 @@ export default function Contact() {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.src = 'https://calendly.com/admin-amwairconditioning?embed_domain=www.amwairconditioning.com&embed_type=Inline';
     script.async = true;
     document.body.appendChild(script);
   }, []);

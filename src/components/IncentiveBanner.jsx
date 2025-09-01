@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 
 // 🔧 Set your Calendly/service booking link here
-const CALENDLY_URL = 'https://calendly.com/YOUR_CALENDLY_SLUG/service-request'; // <-- replace
+const CALENDLY_URL = 'https://calendly.com/admin-amwairconditioning?embed_domain=www.amwairconditioning.com&embed_type=Inline'; // <-- replace
 
 // Helper: within September 2025 (local time)
 const isActivePromoWindow = (now = new Date()) => {
@@ -45,7 +45,7 @@ const IncentiveBanner = () => {
         {/* Copy */}
         <div className="flex-1">
           <p className="text-sm md:text-base font-semibold">
-            🔥 September Special: <span className="underline decoration-white/60">Service Calls Only $49</span>
+            🔥 September Special: <span className="underline decoration-white/60">Service Calls Only $49 - *Does not include afater hours*</span>
           </p>
           <p className="text-[12px] md:text-sm text-white/90">
             Book by Sep 30 · Conroe, The Woodlands, Spring & nearby · Licensed & insured · Veteran-owned
