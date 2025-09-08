@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaYelp, FaBars, FaTimes } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import logo from '../assets/images/FullLogo_Transparent.webp'
+import logo from '../assets/images/FullLogo_Transparent.webp';
 import VoiceSearch from "./VoiceSearch";
 
 const Navbar = () => {
@@ -12,74 +12,107 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-const speak = (text) => {
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "en-US";
-  window.speechSynthesis.speak(utterance);
-};
+  const speak = (text) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-US";
+    window.speechSynthesis.speak(utterance);
+  };
 
-const handleVoiceResult = (query) => {
-  console.log("Voice search for:", query);
+  const handleVoiceResult = (query) => {
+    const q = (query || "").toLowerCase();
+    console.log("Voice search for:", q);
 
-  if (query.includes("about")) {
-    speak("Taking you to our About Us page.");
-    navigate("/about");
-  } else if (query.includes("contact") || query.includes("phone")) {
-    speak("Opening the contact page.");
-    navigate("/contact");
-  } else if (query.includes("services") || query.includes("repair")) {
-    speak("Showing our services.");
-    navigate("/services");
-  } else if (query.includes("quote") || query.includes("estimate")) {
-    speak("Let's get you a quote.");
-    navigate("/contact");
-  } else if (query.includes("home") || query.includes("main")) {
-    speak("Going back to the homepage.");
-    navigate("/");
-  } else if (query.includes("finance") || query.includes("payment")) {
-    speak("Here are your financing options.");
-    navigate("/financing");
-  } else {
-    speak("Sorry, I didn't catch that.");
-    alert(`No match for "${query}"`);
-  }
-};
+    if (q.includes("about")) {
+      speak("Taking you to our About Us page.");
+      navigate("/about");
+    } else if (q.includes("contact") || q.includes("phone")) {
+      speak("Opening the contact page.");
+      navigate("/contact");
+    } else if (q.includes("services") || q.includes("repair")) {
+      speak("Showing our services.");
+      navigate("/services");
+    } else if (q.includes("additional services") || q.includes("extras") || q.includes("duct")) {
+      speak("Opening additional services.");
+      navigate("/additional-services");
+    } else if (q.includes("blog") || q.includes("tips") || q.includes("articles")) {
+      speak("Opening our HVAC blog.");
+      navigate("/blog");
+    } else if (q.includes("quote") || q.includes("estimate")) {
+      speak("Let's get you a quote.");
+      navigate("/contact");
+    } else if (q.includes("home") || q.includes("main")) {
+      speak("Going back to the homepage.");
+      navigate("/");
+    } else if (q.includes("finance") || q.includes("payment")) {
+      speak("Here are your financing options.");
+      navigate("/financing");
+    } else {
+      speak("Sorry, I didn't catch that.");
+      alert(`No match for "${query}"`);
+    }
+  };
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-<Link to="/" className="flex items-center space-x-2">
-  <img
-    src={logo}
-    alt="AMW Logo"
-    className="h-14 w-auto object-contain"
-  />
-  <span className="text-lg md:text-2xl font-bold text-blue-600 whitespace-nowrap">
-    AMW Cooling & Heating LLC
-  </span>
-</Link>
-
+        <Link to="/" className="flex items-center space-x-2">
+          <img
+            src={logo}
+            alt="AMW Logo"
+            className="h-14 w-auto object-contain"
+          />
+          <span className="text-lg md:text-2xl font-bold text-blue-600 whitespace-nowrap">
+            AMW Cooling & Heating LLC
+          </span>
+        </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6 text-gray-700">
+        <nav className="hidden md:flex space-x-6 text-gray-700 items-center">
           <Link to="/" className="hover:text-orange-700">Home</Link>
           <Link to="/about" className="hover:text-orange-700">About Us</Link>
-          <Link to="/services" className="hover:text-orange-700">Services</Link>
+
+          {/* Services dropdown */}
+          <div className="relative group">
+            <Link
+              to="/services"
+              className="hover:text-orange-700 inline-flex items-center"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Services <span className="ml-1">▾</span>
+            </Link>
+            <div
+              className="absolute left-0 mt-2 w-60 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition"
+              role="menu"
+            >
+              <Link to="/services" className="block px-4 py-2 hover:bg-gray-50" role="menuitem">
+                Our Services
+              </Link>
+              <Link to="/additional-services" className="block px-4 py-2 hover:bg-gray-50" role="menuitem">
+                Additional Services
+              </Link>
+              <Link to="/blog" className="block px-4 py-2 hover:bg-gray-50" role="menuitem">
+                HVAC Blog
+              </Link>
+            </div>
+          </div>
+
           <Link to="/faqs" className="hover:text-orange-700">FAQs</Link>
           <Link to="/financing" className="hover:text-orange-700">Financing</Link>
           <Link to="/testimonials" className="hover:text-orange-700">Testimonials</Link>
           <Link to="/contact" className="hover:text-orange-700">Contact</Link>
         </nav>
+
         <VoiceSearch onResult={handleVoiceResult} />
 
         {/* Mobile Icon */}
         <button
-  onClick={toggleMenu}
-  className="md:hidden text-gray-700 z-50 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700"
-  aria-label="Menu"
->
-  {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
-</button>
+          onClick={toggleMenu}
+          className="md:hidden text-gray-700 z-50 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700"
+          aria-label="Menu"
+        >
+          {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+        </button>
       </div>
 
       {/* Mobile Dropdown Menu */}
@@ -87,11 +120,20 @@ const handleVoiceResult = (query) => {
         <div className="md:hidden bg-white shadow-lg border-t border-gray-200 px-4 py-4 space-y-3 text-gray-700">
           <Link to="/" className="block" onClick={closeMenu}>Home</Link>
           <Link to="/about" className="block" onClick={closeMenu}>About Us</Link>
-          <Link to="/services" className="block" onClick={closeMenu}>Services</Link>
+
+          {/* Collapsed Services group on mobile */}
+          <div className="pt-2 border-t border-gray-100">
+            <div className="text-xs font-semibold uppercase text-gray-500 mb-1">Services</div>
+            <Link to="/services" className="block" onClick={closeMenu}>Our Services</Link>
+            <Link to="/additional-services" className="block" onClick={closeMenu}>Additional Services</Link>
+            <Link to="/blog" className="block" onClick={closeMenu}>HVAC Blog</Link>
+          </div>
+
           <Link to="/faqs" className="block" onClick={closeMenu}>FAQs</Link>
           <Link to="/financing" className="block" onClick={closeMenu}>Financing</Link>
           <Link to="/testimonials" className="block" onClick={closeMenu}>Testimonials</Link>
           <Link to="/contact" className="block" onClick={closeMenu}>Contact</Link>
+
           <VoiceSearch onResult={handleVoiceResult} />
 
           {/* Social Icons */}

@@ -12,24 +12,20 @@ import ReactCompareImage from 'react-compare-image';
 import newInstallBefore from '../assets/images/6392-old_unit.webp';
 import newInstallAfter from '../assets/images/6387-new_install.webp';
 
-<Helmet>
-  <title>HVAC Services | AMW Cooling & Heating LLC</title>
-  <meta
-    name="description"
-    content="Explore our expert HVAC services, including installation, repair, and maintenance for residential and commercial clients across Conroe, The Woodlands, and beyond."
-  />
-  <meta
-    name="keywords"
-    content="HVAC services, AC installation, heater repair, air conditioning Conroe TX, The Woodlands HVAC, AMW Cooling"
-  />
-</Helmet>
 
 export default function Services() {
   return (
     <main className="bg-gray-50 text-gray-800 font-sans">
       <Helmet>
-        <title>Our Services | AMW Cooling & Heating LLC</title>
-        <meta name="description" content="Explore our comprehensive HVAC services: heating, cooling, ventilation, new installations, maintenance, and more." />
+        <title>HVAC Services | AMW Cooling & Heating LLC</title>
+        <meta
+          name="description"
+          content="Explore our expert HVAC services, including installation, repair, and maintenance for residential and commercial clients across Conroe, The Woodlands, and beyond."
+        />
+        <meta
+          name="keywords"
+          content="HVAC services, AC installation, heater repair, air conditioning Conroe TX, The Woodlands HVAC, AMW Cooling"
+        />
       </Helmet>
 
       {/* Title Section with CTA */}

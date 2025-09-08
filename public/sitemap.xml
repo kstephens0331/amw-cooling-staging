@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.amwairconditioning.com/</loc>
-  </url>
-  <url>
-    <loc>https://www.amwairconditioning.com/about</loc>
-  </url>
-  <url>
-    <loc>https://www.amwairconditioning.com/services</loc>
-  </url>
-  <url>
-    <loc>https://www.amwairconditioning.com/faqs</loc>
-  </url>
-  <url>
-    <loc>https://www.amwairconditioning.com/financing</loc>
-  </url>
-  <url>
-    <loc>https://www.amwairconditioning.com/testimonials</loc>
-  </url>
-  <url>
-    <loc>https://www.amwairconditioning.com/contact</loc>
-  </url>
+  <url><loc>https://amwaircondition.com/</loc><lastmod>2025-09-07</lastmod></url>
+  <url><loc>https://amwaircondition.com/services</loc><lastmod>2025-09-07</lastmod></url>
+  <url><loc>https://amwaircondition.com/additional-services</loc><lastmod>2025-09-07</lastmod></url>
+  <url><loc>https://amwaircondition.com/blog</loc><lastmod>2025-09-07</lastmod></url>
+  <url><loc>https://amwaircondition.com/blog/prep-ac-conroe-summer</loc><lastmod>2025-09-07</lastmod></url>
+  <!-- add new blog posts here -->
+  <url><loc>https://amwaircondition.com/contact</loc><lastmod>2025-09-07</lastmod></url>
 </urlset>

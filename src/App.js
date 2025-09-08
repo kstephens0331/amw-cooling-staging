@@ -20,6 +20,9 @@ const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const HeroLandingPage = lazy(() => import('./components/HeroLandingPage'));
 const ContactUsDuplicate = lazy(() => import('./pages/Contact-us'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
+const AdditionalServices = lazy(() => import('./pages/AdditionalServices'));
 
 
 function ScrollAndTrack() {
@@ -103,6 +106,32 @@ function App() {
   element={
     <Suspense fallback={<div>Loading Contact Page...</div>}>
       <ContactUsDuplicate />
+    </Suspense>
+  }
+/>
+<Route
+  path="/blog"
+  element={
+    <Suspense fallback={<div>Loading Blog...</div>}>
+      <Blog />
+    </Suspense>
+  }
+/>
+
+<Route
+  path="/blog/:slug"
+  element={
+    <Suspense fallback={<div>Loading Post...</div>}>
+      <BlogPost />
+    </Suspense>
+  }
+/>
+
+<Route
+  path="/additional-services"
+  element={
+    <Suspense fallback={<div>Loading Additional Services...</div>}>
+      <AdditionalServices />
     </Suspense>
   }
 />

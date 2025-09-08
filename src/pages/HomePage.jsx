@@ -26,39 +26,47 @@ export default function HomePage() {
     name="keywords"
     content="HVAC services, air conditioning repair, heating maintenance, Conroe TX, The Woodlands HVAC, AMW Cooling & Heating"
   />
-  <script type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "HVACBusiness",
-      "name": "AMW Cooling & Heating LLC",
-      "image": "https://amwairconditioning.com/images/FullLogo_Transparent.webp",
-      "url": "https://amwairconditioning.com",
-      "telephone": "+1-936-331-1339",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Conroe",
-        "addressRegion": "TX",
-        "postalCode": "77301",
-        "addressCountry": "US"
-      },
-      "priceRange": "$$",
-      "openingHours": "Mo-Fr 08:00-17:00",
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 30.3258133,
-          "longitude": -95.4718028
-        },
-        "geoRadius": 40000
-      },
-      "sameAs": [
-        "https://www.facebook.com/amwairconditioning",
-        "https://www.instagram.com/amwairconditioning",
-        "https://www.yelp.com/biz/amw-cooling-and-heating-conroe"
-      ]
-    })}
-  </script>
+   <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HVACBusiness',
+            name: 'AMW Cooling & Heating LLC',
+            url: 'https://amwaircondition.com/',
+            telephone: '(936) 331-1339',
+            areaServed: [
+              'Conroe TX',
+              'The Woodlands TX',
+              'Spring TX',
+              'Magnolia TX',
+              'Willis TX',
+              'Montgomery TX'
+            ],
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Conroe',
+              addressRegion: 'TX',
+              addressCountry: 'US'
+            },
+            openingHoursSpecification: [
+              {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: [
+                  'Monday',
+                  'Tuesday',
+                  'Wednesday',
+                  'Thursday',
+                  'Friday'
+                ],
+                opens: '08:00',
+                closes: '17:00'
+              }
+            ],
+            sameAs: [
+              'https://www.facebook.com/people/AMW-Cooling-Heating-LLC/61569862892114/',
+              'https://www.instagram.com/amwairconditioning/'
+            ]
+          })}
+        </script>
   <link rel="preconnect" href="https://a.tile.openstreetmap.org" />
   <link rel="preconnect" href="https://b.tile.openstreetmap.org" />
   <link rel="preconnect" href="https://c.tile.openstreetmap.org" />
