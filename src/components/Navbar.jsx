@@ -3,66 +3,68 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaYelp, FaBars, FaTimes } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import logo from '../assets/images/FullLogo_Transparent.webp';
-import VoiceSearch from "./VoiceSearch";
-
+import VoiceSearch from './VoiceSearch';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
-
+  // --- top-level hooks (OK) ---
+  const [isOpen, setIsOpen] = useState(false);          // mobile menu
+  const [servicesOpen, setServicesOpen] = useState(false); // desktop Services dropdown
+  const closeTimer = useRef(null);
   const navigate = useNavigate();
 
+  // mobile menu handlers
+  const toggleMenu = () => setIsOpen(prev => !prev);
+  const closeMenu = () => setIsOpen(false);
+
+  // dropdown handlers (desktop)
+  const openServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setServicesOpen(true);
+  };
+  const scheduleCloseServices = () => {
+    // small delay prevents flicker when moving into the panel
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 120);
+  };
+  const forceCloseServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setServicesOpen(false);
+  };
+
+  // voice search helpers (NO hooks here)
   const speak = (text) => {
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-US";
+    utterance.lang = 'en-US';
     window.speechSynthesis.speak(utterance);
   };
 
   const handleVoiceResult = (query) => {
-    const q = (query || "").toLowerCase();
-    console.log("Voice search for:", q);
+    const q = String(query || '').toLowerCase();
+    console.log('Voice search for:', q);
 
-    const [servicesOpen, setServicesOpen] = useState(false);
-const closeTimer = useRef(null);
-
-const openServices = () => {
-  if (closeTimer.current) clearTimeout(closeTimer.current);
-  setServicesOpen(true);
-};
-const scheduleCloseServices = () => {
-  // small delay prevents flicker when moving into the menu
-  closeTimer.current = setTimeout(() => setServicesOpen(false), 120);
-};
-const forceCloseServices = () => {
-  if (closeTimer.current) clearTimeout(closeTimer.current);
-  setServicesOpen(false);
-};
-
-    if (q.includes("about")) {
-      speak("Taking you to our About Us page.");
-      navigate("/about");
-    } else if (q.includes("contact") || q.includes("phone")) {
-      speak("Opening the contact page.");
-      navigate("/contact");
-    } else if (q.includes("services") || q.includes("repair")) {
-      speak("Showing our services.");
-      navigate("/services");
-    } else if (q.includes("additional services") || q.includes("extras") || q.includes("duct")) {
-      speak("Opening additional services.");
-      navigate("/additional-services");
-    } else if (q.includes("blog") || q.includes("tips") || q.includes("articles")) {
-      speak("Opening our HVAC blog.");
-      navigate("/blog");
-    } else if (q.includes("quote") || q.includes("estimate")) {
+    if (q.includes('about')) {
+      speak('Taking you to our About Us page.');
+      navigate('/about');
+    } else if (q.includes('contact') || q.includes('phone')) {
+      speak('Opening the contact page.');
+      navigate('/contact');
+    } else if (q.includes('services') || q.includes('repair')) {
+      speak('Showing our services.');
+      navigate('/services');
+    } else if (q.includes('additional services') || q.includes('extras') || q.includes('duct')) {
+      speak('Opening additional services.');
+      navigate('/additional-services');
+    } else if (q.includes('blog') || q.includes('tips') || q.includes('articles')) {
+      speak('Opening our HVAC blog.');
+      navigate('/blog');
+    } else if (q.includes('quote') || q.includes('estimate')) {
       speak("Let's get you a quote.");
-      navigate("/contact");
-    } else if (q.includes("home") || q.includes("main")) {
-      speak("Going back to the homepage.");
-      navigate("/");
-    } else if (q.includes("finance") || q.includes("payment")) {
-      speak("Here are your financing options.");
-      navigate("/financing");
+      navigate('/contact');
+    } else if (q.includes('home') || q.includes('main')) {
+      speak('Going back to the homepage.');
+      navigate('/');
+    } else if (q.includes('finance') || q.includes('payment')) {
+      speak('Here are your financing options.');
+      navigate('/financing');
     } else {
       speak("Sorry, I didn't catch that.");
       alert(`No match for "${query}"`);
@@ -73,11 +75,7 @@ const forceCloseServices = () => {
     <header className="bg-white shadow-md sticky top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <img
-            src={logo}
-            alt="AMW Logo"
-            className="h-14 w-auto object-contain"
-          />
+          <img src={logo} alt="AMW Logo" className="h-14 w-auto object-contain" />
           <span className="text-lg md:text-2xl font-bold text-blue-600 whitespace-nowrap">
             AMW Cooling & Heating LLC
           </span>
@@ -85,70 +83,67 @@ const forceCloseServices = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 text-gray-700 items-center">
-  <Link to="/" className="hover:text-orange-700">Home</Link>
-  <Link to="/about" className="hover:text-orange-700">About Us</Link>
+          <Link to="/" className="hover:text-orange-700">Home</Link>
+          <Link to="/about" className="hover:text-orange-700">About Us</Link>
 
-  {/* Controlled Services dropdown */}
-  <div
-    className="relative"
-    onMouseEnter={openServices}
-    onMouseLeave={scheduleCloseServices}
-  >
-    <button
-      type="button"
-      className="inline-flex items-center hover:text-orange-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-      aria-haspopup="true"
-      aria-expanded={servicesOpen}
-      onClick={() => setServicesOpen((v) => !v)}
-    >
-      Services <span className="ml-1">▾</span>
-    </button>
+          {/* Controlled Services dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={openServices}
+            onMouseLeave={scheduleCloseServices}
+          >
+            <button
+              type="button"
+              className="inline-flex items-center hover:text-orange-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              aria-haspopup="true"
+              aria-expanded={servicesOpen}
+              onClick={() => setServicesOpen(v => !v)}
+            >
+              Services <span className="ml-1">▾</span>
+            </button>
 
-    {/* Dropdown panel */}
-    <div
-      className={
-        "absolute left-0 top-full z-50 w-64 bg-white border border-gray-200 rounded shadow-lg " +
-        (servicesOpen ? "opacity-100 visible" : "opacity-0 invisible")
-      }
-      // keep open when hovering the panel
-      onMouseEnter={openServices}
-      onMouseLeave={scheduleCloseServices}
-      // helps avoid the 'gap' issue
-      style={{ marginTop: 2 }}
-      role="menu"
-    >
-      <Link
-        to="/services"
-        className="block px-4 py-2 hover:bg-gray-50"
-        role="menuitem"
-        onClick={forceCloseServices}
-      >
-        Our Services
-      </Link>
-      <Link
-        to="/additional-services"
-        className="block px-4 py-2 hover:bg-gray-50"
-        role="menuitem"
-        onClick={forceCloseServices}
-      >
-        Additional Services
-      </Link>
-      <Link
-        to="/blog"
-        className="block px-4 py-2 hover:bg-gray-50"
-        role="menuitem"
-        onClick={forceCloseServices}
-      >
-        HVAC Blog
-      </Link>
-    </div>
-  </div>
+            <div
+              className={
+                'absolute left-0 top-full z-50 w-64 bg-white border border-gray-200 rounded shadow-lg transition ' +
+                (servicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible')
+              }
+              onMouseEnter={openServices}
+              onMouseLeave={scheduleCloseServices}
+              style={{ marginTop: 2 }}
+              role="menu"
+            >
+              <Link
+                to="/services"
+                className="block px-4 py-2 hover:bg-gray-50"
+                role="menuitem"
+                onClick={forceCloseServices}
+              >
+                Our Services
+              </Link>
+              <Link
+                to="/additional-services"
+                className="block px-4 py-2 hover:bg-gray-50"
+                role="menuitem"
+                onClick={forceCloseServices}
+              >
+                Additional Services
+              </Link>
+              <Link
+                to="/blog"
+                className="block px-4 py-2 hover:bg-gray-50"
+                role="menuitem"
+                onClick={forceCloseServices}
+              >
+                HVAC Blog
+              </Link>
+            </div>
+          </div>
 
-  <Link to="/faqs" className="hover:text-orange-700">FAQs</Link>
-  <Link to="/financing" className="hover:text-orange-700">Financing</Link>
-  <Link to="/testimonials" className="hover:text-orange-700">Testimonials</Link>
-  <Link to="/contact" className="hover:text-orange-700">Contact</Link>
-</nav> 
+          <Link to="/faqs" className="hover:text-orange-700">FAQs</Link>
+          <Link to="/financing" className="hover:text-orange-700">Financing</Link>
+          <Link to="/testimonials" className="hover:text-orange-700">Testimonials</Link>
+          <Link to="/contact" className="hover:text-orange-700">Contact</Link>
+        </nav>
 
         <VoiceSearch onResult={handleVoiceResult} />
 
@@ -168,7 +163,6 @@ const forceCloseServices = () => {
           <Link to="/" className="block" onClick={closeMenu}>Home</Link>
           <Link to="/about" className="block" onClick={closeMenu}>About Us</Link>
 
-          {/* Collapsed Services group on mobile */}
           <div className="pt-2 border-t border-gray-100">
             <div className="text-xs font-semibold uppercase text-gray-500 mb-1">Services</div>
             <Link to="/services" className="block" onClick={closeMenu}>Our Services</Link>
