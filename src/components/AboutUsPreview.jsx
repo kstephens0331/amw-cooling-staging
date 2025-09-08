@@ -22,7 +22,7 @@ export default function AboutUsPreview() {
             to="/about"
             className="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition text-xs md:text-sm" aria-label="Learn more about AMW Cooling & Heating's team and mission"
           >
-            Learn More
+            About AMW Cooling & Heating
           </Link>
         </div>
 
