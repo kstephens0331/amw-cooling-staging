@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaYelp, FaBars, FaTimes } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import logo from '../assets/images/FullLogo_Transparent.webp';
 import VoiceSearch from "./VoiceSearch";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +22,22 @@ const Navbar = () => {
   const handleVoiceResult = (query) => {
     const q = (query || "").toLowerCase();
     console.log("Voice search for:", q);
+
+    const [servicesOpen, setServicesOpen] = useState(false);
+const closeTimer = useRef(null);
+
+const openServices = () => {
+  if (closeTimer.current) clearTimeout(closeTimer.current);
+  setServicesOpen(true);
+};
+const scheduleCloseServices = () => {
+  // small delay prevents flicker when moving into the menu
+  closeTimer.current = setTimeout(() => setServicesOpen(false), 120);
+};
+const forceCloseServices = () => {
+  if (closeTimer.current) clearTimeout(closeTimer.current);
+  setServicesOpen(false);
+};
 
     if (q.includes("about")) {
       speak("Taking you to our About Us page.");
@@ -68,40 +85,70 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 text-gray-700 items-center">
-          <Link to="/" className="hover:text-orange-700">Home</Link>
-          <Link to="/about" className="hover:text-orange-700">About Us</Link>
+  <Link to="/" className="hover:text-orange-700">Home</Link>
+  <Link to="/about" className="hover:text-orange-700">About Us</Link>
 
-          {/* Services dropdown */}
-          <div className="relative group">
-            <Link
-              to="/services"
-              className="hover:text-orange-700 inline-flex items-center"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Services <span className="ml-1">▾</span>
-            </Link>
-            <div
-              className="absolute left-0 mt-2 w-60 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition"
-              role="menu"
-            >
-              <Link to="/services" className="block px-4 py-2 hover:bg-gray-50" role="menuitem">
-                Our Services
-              </Link>
-              <Link to="/additional-services" className="block px-4 py-2 hover:bg-gray-50" role="menuitem">
-                Additional Services
-              </Link>
-              <Link to="/blog" className="block px-4 py-2 hover:bg-gray-50" role="menuitem">
-                HVAC Blog
-              </Link>
-            </div>
-          </div>
+  {/* Controlled Services dropdown */}
+  <div
+    className="relative"
+    onMouseEnter={openServices}
+    onMouseLeave={scheduleCloseServices}
+  >
+    <button
+      type="button"
+      className="inline-flex items-center hover:text-orange-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+      aria-haspopup="true"
+      aria-expanded={servicesOpen}
+      onClick={() => setServicesOpen((v) => !v)}
+    >
+      Services <span className="ml-1">▾</span>
+    </button>
 
-          <Link to="/faqs" className="hover:text-orange-700">FAQs</Link>
-          <Link to="/financing" className="hover:text-orange-700">Financing</Link>
-          <Link to="/testimonials" className="hover:text-orange-700">Testimonials</Link>
-          <Link to="/contact" className="hover:text-orange-700">Contact</Link>
-        </nav>
+    {/* Dropdown panel */}
+    <div
+      className={
+        "absolute left-0 top-full z-50 w-64 bg-white border border-gray-200 rounded shadow-lg " +
+        (servicesOpen ? "opacity-100 visible" : "opacity-0 invisible")
+      }
+      // keep open when hovering the panel
+      onMouseEnter={openServices}
+      onMouseLeave={scheduleCloseServices}
+      // helps avoid the 'gap' issue
+      style={{ marginTop: 2 }}
+      role="menu"
+    >
+      <Link
+        to="/services"
+        className="block px-4 py-2 hover:bg-gray-50"
+        role="menuitem"
+        onClick={forceCloseServices}
+      >
+        Our Services
+      </Link>
+      <Link
+        to="/additional-services"
+        className="block px-4 py-2 hover:bg-gray-50"
+        role="menuitem"
+        onClick={forceCloseServices}
+      >
+        Additional Services
+      </Link>
+      <Link
+        to="/blog"
+        className="block px-4 py-2 hover:bg-gray-50"
+        role="menuitem"
+        onClick={forceCloseServices}
+      >
+        HVAC Blog
+      </Link>
+    </div>
+  </div>
+
+  <Link to="/faqs" className="hover:text-orange-700">FAQs</Link>
+  <Link to="/financing" className="hover:text-orange-700">Financing</Link>
+  <Link to="/testimonials" className="hover:text-orange-700">Testimonials</Link>
+  <Link to="/contact" className="hover:text-orange-700">Contact</Link>
+</nav> 
 
         <VoiceSearch onResult={handleVoiceResult} />
 
