@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import hero from '../assets/images/DSC_2135.webp';
+import hero from '../assets/images/DSC_2135-1920.webp';
 
 export default function MobileHero() {
   return (
