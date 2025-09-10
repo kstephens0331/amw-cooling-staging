@@ -16,11 +16,17 @@ export const event = (action, params = {}) => {
     console.debug('event', action, params);
   }
 };
-export const initGA = () => {
+
+export const initGA = (mode = "firstparty") => {
   if (!window.gtag) return;
-  window.gtag('config', 'G-PHMH5V5651', {
-    cookie_domain: 'amwaircondition.com',
-    cookie_flags: 'SameSite=Lax;Secure',
-    // GA4 anonymize_ip is on by default; no need to set
-  });
+
+  const base = { };
+  if (mode === "firstparty") {
+    base.cookie_domain = "amwaircondition.com";
+    base.cookie_flags = "SameSite=Lax;Secure";
+  } else if (mode === "cookieless") {
+    base.client_storage = "none";
+  }
+
+  window.gtag("config", "G-PHMH5V5651", base);
 };

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PHMH5V5651"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-PHMH5V5651"></script>
+  <script>
+    // Minimal GA bootstrap; full config happens after app mount
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+  </script>
 
-  gtag('config', 'G-PHMH5V5651');
-</script>
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,31 +19,23 @@
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <title>AMW Cooling & Heating | Conroe HVAC Experts</title>
 
-  <!-- ✅ Preload LCP Image First -->
- <link rel="preload" as="image"
-      href="/assets/images/DSC_2135.jpg"
-      imagesrcset="/assets/images/DSC_2135.webp 1280w, /assets/images/DSC_2135-2x.webp 1920w"
-      imagesizes="(min-width:1024px) 100vw, 100vw">
+  <!-- ✅ Preload the actual LCP image (WebP) exactly as used in the hero -->
+  <link
+    rel="preload"
+    as="image"
+    href="/assets/images/DSC_2135.webp"
+    imagesrcset="/assets/images/DSC_2135.webp 1920w, /assets/images/DSC_2135-2x.webp 3840w"
+    imagesizes="100vw"
+  />
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-    }
-    header, .hero, .navbar {
-      background: white;
-      color: #1e40af;
-    }
-    .hero h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      text-align: center;
-    }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Inter', sans-serif; }
+    header, .hero, .navbar { background: white; color: #1e40af; }
+    .hero h1 { font-size: 2rem; font-weight: 600; text-align: center; }
   </style>
 </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
