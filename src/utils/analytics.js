@@ -17,16 +17,8 @@ export const event = (action, params = {}) => {
   }
 };
 
-export const initGA = (mode = "firstparty") => {
+export const initGA = () => {
   if (!window.gtag) return;
-
-  const base = { };
-  if (mode === "firstparty") {
-    base.cookie_domain = "amwaircondition.com";
-    base.cookie_flags = "SameSite=Lax;Secure";
-  } else if (mode === "cookieless") {
-    base.client_storage = "none";
-  }
-
-  window.gtag("config", "G-PHMH5V5651", base);
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-PHMH5V5651', { client_storage: 'none' });
 };
