@@ -42,7 +42,7 @@ export default function MobileHero() {
             Help others find us — leave a Google review!
           </p>
           <a
-            href="https://www.google.com/search?q=AMW+Cooling+%26+Heating+Reviews"
+            href="https://g.page/r/CS99Sm7SPdvPEBM/review"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-3 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition text-xs font-semibold"

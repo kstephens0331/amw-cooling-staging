@@ -55,7 +55,7 @@ export default function HeroSection() {
             Help other homeowners find us — leave a review on Google!
           </p>
           <a
-            href="https://www.google.com/search?sca_esv=3689d8f87b454a04&rlz=1C1UEAD_enUS1100US1100&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-Ew1xWYRh3W0x95s4I1CY56p8ZDCU0RELO-yfbJ2A3BPTIYULwgDJs1JMco_ssAI31rRlsh52piMFkTrezcULB24LRNBJZFtx7Ep6HasQcQHtaXQRUKjSK2LYiEhZ9pKL6HGbGVCbuZrD8W32y3cPnVMTFXcMDE00lIt89eSmCQG6BqJXvg%3D%3D&q=AMW+Cooling+%26+Heating+%7C+HVAC+Repair+Emergency+Service+%7C+AC+Unit+Install+Conroe+Reviews&sa=X&ved=2ahUKEwi3i8Tws-qNAxXpM9AFHd7iD9cQ0bkNegQIKxAD&biw=1920&bih=945&dpr=1"
+            href="https://g.page/r/CS99Sm7SPdvPEBM/review"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition text-sm md:text-base font-bold"
