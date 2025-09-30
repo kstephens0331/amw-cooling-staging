@@ -109,10 +109,9 @@ export default function TestimonialsPage() {
           </div>
 
           {/* Trustindex Widget */}
-          <div
-            className="ti-widget mt-16"
-            data-widget-id="a04627c54ff806690f16450a19e"
-          ></div>
+          <div>
+<TrustIndexWidget className="mt-4" />
+          </div>
         </div>
       </section>
     </div>
