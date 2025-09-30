@@ -6,20 +6,16 @@ const WIDGET_ID  = "a04627c54ff806690f16450a19e";  // often same as account key
 export default function TrustIndexWidget({ className = "" }) {
   const injectedRef = useRef(false);
 
-  useEffect(() => {
-    if (injectedRef.current) {
-      // Re-scan on SPA navigations
-      if (window?.Trustindex?.load) window.Trustindex.load();
-      return;
-    }
- const s = document.createElement('script');
+useEffect(() => {
+  if (document.getElementById('ti-loader')) { window?.Trustindex?.load?.(); return; }
+  const s = document.createElement('script');
   s.id = 'ti-loader';
   s.async = true;
   s.defer = true;
   s.setAttribute('data-cfasync', 'false');
   s.src = 'https://cdn.trustindex.io/loader.js?a04627c54ff806690f16450a19e';
   document.body.appendChild(s);
-  }, []);
+}, []);
 
   return (
     <div className={className}>
