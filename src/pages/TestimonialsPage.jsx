@@ -72,7 +72,7 @@ export default function TestimonialsPage() {
           </div>
 
           {/* Trustindex Widget */}
-          <TrustIndexWidget className="mt-8" />
+          <TrustIndexWidget />
         </div>
       </section>
     </div>
