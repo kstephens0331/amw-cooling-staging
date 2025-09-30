@@ -1,27 +1,39 @@
-import React, { useEffect } from 'react';
+// src/components/TrustIndexWidget.jsx
+import { useEffect, useRef } from "react";
 
-export default function Testimonials1() {
+const ACCOUNT_KEY = "a04627c54ff806690f16450a19e"; // your key from Trustindex snippet
+const WIDGET_ID  = "a04627c54ff806690f16450a19e";  // often same as key; if Trustindex shows a different widget id, paste that here
+
+export default function TrustIndexWidget({ className = "" }) {
+  const injectedRef = useRef(false);
+
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.trustindex.io/loader.js?9c9a1c847f06430b3996053b6b0';
-    script.defer = true;
-    script.async = true;
-    document.body.appendChild(script);
+    if (injectedRef.current) {
+      // script already present: ask Trustindex to scan DOM again (SPA-friendly)
+      window?.Trustindex?.load?.();
+      return;
+    }
+    const s = document.createElement("script");
+    s.src = `https://cdn.trustindex.io/loader.js?${ACCOUNT_KEY}`;
+    s.defer = true;
+    s.async = true;
+    document.body.appendChild(s);
+    injectedRef.current = true;
 
-    // Cleanup
     return () => {
-      document.body.removeChild(script);
+      // keep the script for other routes; removing can break subsequent loads
     };
   }, []);
 
   return (
-    <section className="py-12 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-6 text-center">What Our Customers Are Saying</h2>
-
-        {/* Trustindex Widget Placeholder */}
-        <div className="ti-widget"></div>
-      </div>
-    </section>
+    <div className={className}>
+      {/* This div must include the widget id */}
+      <div className="ti-widget" data-widget-id={WIDGET_ID}></div>
+      <noscript>
+        <a href="https://www.google.com/search?q=AMW+Cooling+%26+Heating+LLC+reviews">
+          Read our Google reviews
+        </a>
+      </noscript>
+    </div>
   );
 }
