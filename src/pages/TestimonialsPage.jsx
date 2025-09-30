@@ -1,7 +1,7 @@
 import React from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import TrustIndexWidget from "../components/Testimonials;" // adjust path to where you put it"
+import TrustIndexWidget from "../components/Testimonials.jsx;" // adjust path to where you put it"
 
 
 export default function TestimonialsPage() {
