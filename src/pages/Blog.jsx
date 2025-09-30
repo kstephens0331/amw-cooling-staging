@@ -79,7 +79,7 @@ export default function Blog() {
       <section className="text-center py-12 bg-gradient-to-br from-blue-50 to-white shadow mb-8">
         <h1 className="text-3xl font-bold text-blue-900 mb-2">HVAC Blog</h1>
         <p className="text-gray-700 max-w-2xl mx-auto">
-          Long-form, practical guides for homeowners in Conroe, The Woodlands, Spring, and Montgomery County.
+          Expert HVAC insights and maintenance guides to help Conroe, The Woodlands, Spring, and Montgomery County homeowners save money, stay safe, and stay comfortable year-round.
         </p>
       </section>
 
