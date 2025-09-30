@@ -12,13 +12,13 @@ export default function TrustIndexWidget({ className = "" }) {
       if (window?.Trustindex?.load) window.Trustindex.load();
       return;
     }
-    const s = document.createElement("script");
-    s.src = `https://cdn.trustindex.io/loader.js?${ACCOUNT_KEY}`;
-    s.defer = true;
-    s.async = true;
-    s.setAttribute('data-cfasync', 'false'); // prevent Rocket Loader meddling
-    document.body.appendChild(s);
-    injectedRef.current = true;
+ const s = document.createElement('script');
+  s.id = 'ti-loader';
+  s.async = true;
+  s.defer = true;
+  s.setAttribute('data-cfasync', 'false');
+  s.src = 'https://cdn.trustindex.io/loader.js?a04627c54ff806690f16450a19e';
+  document.body.appendChild(s);
   }, []);
 
   return (
