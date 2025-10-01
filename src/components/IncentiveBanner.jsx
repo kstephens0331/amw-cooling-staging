@@ -45,10 +45,10 @@ const IncentiveBanner = () => {
         {/* Copy */}
         <div className="flex-1">
           <p className="text-sm md:text-base font-semibold">
-            🔥 September Special: <span className="underline decoration-white/60">Get a free dryer vent inspection/cleaning with the purhcase of a yearly maintenance plan!</span>
+            🔥 September Special: <span className="underline decoration-white/60">Get a FREE Dryer Vent Inspection/Cleaning with the Purhcase of a Yearly Maintenance Plan!</span>
           </p>
           <p className="text-[12px] md:text-sm text-white/90">
-            Book by Sep 30 · Conroe, The Woodlands, Spring & nearby · Licensed & insured · Veteran-owned
+            Book by Oct. 30 · Conroe, The Woodlands, Spring & nearby · Licensed & insured · Veteran-owned
           </p>
         </div>
 
