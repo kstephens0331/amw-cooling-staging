@@ -6,8 +6,8 @@ const CALENDLY_URL = 'https://calendly.com/admin-amwairconditioning?embed_domain
 
 // Helper: within September 2025 (local time)
 const isActivePromoWindow = (now = new Date()) => {
-  const start = new Date(2025, 8, 1, 0, 0, 0);  // Sep 1, 2025
-  const end   = new Date(2025, 9, 1, 0, 0, 0);  // Oct 1, 2025 (exclusive)
+  const start = new Date(2025, 9, 1, 0, 0, 0);  // Sep 1, 2025
+  const end   = new Date(2025, 10, 1, 0, 0, 0);  // Oct 1, 2025 (exclusive)
   return now >= start && now < end;
 };
 
@@ -31,7 +31,7 @@ const IncentiveBanner = () => {
     const id = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(id);
   }, []);
-  const deadline = new Date(2025, 9, 1, 0, 0, 0);
+  const deadline = new Date(2025, 10, 1, 0, 0, 0);
   const remainingMs = Math.max(0, deadline - now);
   const days    = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
   const hours   = Math.floor((remainingMs / (1000 * 60 * 60)) % 24);
@@ -45,7 +45,7 @@ const IncentiveBanner = () => {
         {/* Copy */}
         <div className="flex-1">
           <p className="text-sm md:text-base font-semibold">
-            🔥 September Special: <span className="underline decoration-white/60">Service Calls Only $49 - *Does not include after hours*</span>
+            🔥 September Special: <span className="underline decoration-white/60">Get a free dryer vent inspection/cleaning with the purhcase of a yearly maintenance plan!</span>
           </p>
           <p className="text-[12px] md:text-sm text-white/90">
             Book by Sep 30 · Conroe, The Woodlands, Spring & nearby · Licensed & insured · Veteran-owned

@@ -98,9 +98,8 @@ We know the HVAC challenges unique to Montgomery County homes and customize our 
 
 Cold fronts arrive fast in North Houston, and dryer vent fires can strike unexpectedly. Protect your comfort, safety, and wallet this season with our fall special.
 
-👉 **Schedule your maintenance plan today and claim your FREE dryer vent inspection and cleaning.**  
+ **Schedule your maintenance plan today and claim your FREE dryer vent inspection and cleaning.**  
 Call **(936) 331-1339** or schedule online at **[your website link]**.
 
 ---
 
-*Word Count: ~2,200*
