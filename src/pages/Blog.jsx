@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { event } from '../utils/analytics'; // add at the top
+import { event } from '../utils/analytics';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
@@ -77,10 +78,18 @@ export default function Blog() {
 
       {/* Header */}
       <section className="text-center py-12 bg-gradient-to-br from-blue-50 to-white shadow mb-8">
-        <h1 className="text-3xl font-bold text-blue-900 mb-2">HVAC Blog</h1>
-        <p className="text-gray-700 max-w-2xl mx-auto">
-          Expert HVAC insights and maintenance guides to help Conroe, The Woodlands, Spring, and Montgomery County homeowners save money, stay safe, and stay comfortable year-round.
-        </p>
+        <div className="container mx-auto px-4">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', path: '/' },
+              { label: 'Blog', path: null }
+            ]}
+          />
+          <h1 className="text-3xl font-bold text-blue-900 mb-2 mt-4">HVAC Blog</h1>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            Expert HVAC insights and maintenance guides to help Conroe, The Woodlands, Spring, and Montgomery County homeowners save money, stay safe, and stay comfortable year-round.
+          </p>
+        </div>
       </section>
 
       {/* Filters */}
@@ -204,15 +213,15 @@ export default function Blog() {
                     </div>
                   )}
 
-<div className="mt-4">
-  <Link
-    to={`/blog/${p.slug}`}
-    onClick={() => event('blog_read_more', { slug: p.slug })}
-    className="inline-block text-sm text-white bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded"
-  >
-    Read More
-  </Link>
-</div>
+                  <div className="mt-4">
+                    <Link
+                      to={`/blog/${p.slug}`}
+                      onClick={() => event('blog_read_more', { slug: p.slug })}
+                      className="inline-block text-sm text-white bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded"
+                    >
+                      Read More
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}

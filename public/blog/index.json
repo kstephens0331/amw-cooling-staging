@@ -1,9 +1,17 @@
 [
 {
+  "slug": "dryer-vent-cleaning-safety-conroe",
+  "title": "Why Dryer Vent Cleaning is Critical for Conroe Homes: Safety, Efficiency, and Peace of Mind",
+  "date": "2025-10-31",
+  "excerpt": "Discover why professional dryer vent cleaning is essential for Conroe homeowners. Learn about fire risks, energy waste, and how our fall special combines HVAC maintenance with FREE dryer vent service.",
+  "image": "/blog/dryer-vent-cleaning-safety-conroe.webp",
+  "tags": ["dryer vent", "safety", "Conroe", "maintenance", "fall special"]
+},
+{
   "slug": "prep-ac-conroe-summer",
   "title": "How to Prep Your AC Before Conroe Summers",
   "date": "2025-09-07",
-  "excerpt": "Preparing your AC before Conroe’s peak heat saves money, prevents breakdowns, and keeps humidity under control.",
+  "excerpt": "Preparing your AC before Conroe's peak heat saves money, prevents breakdowns, and keeps humidity under control.",
   "image": "/blog/prep-ac-conroe-summer.webp",
   "tags": ["AC maintenance", "Conroe", "summer"]
 },
@@ -12,20 +20,23 @@
   "title": "Why Fall Furnace Maintenance is Essential for Conroe Homeowners",
   "date": "2025-09-14",
   "excerpt": "Prepare your home for chilly North Houston nights. Learn why fall furnace maintenance saves money, improves safety, and keeps your family comfortable.",
-  "image": "/blog/fall-furnace-maintenance-conroe.webp"
+  "image": "/blog/fall-furnace-maintenance-conroe.webp",
+  "tags": ["furnace maintenance", "Conroe", "fall", "heating", "safety"]
 },
 {
   "slug": "hvac-maintenance-dryer-vent-special",
   "title": "Fall HVAC Maintenance Special: Free Dryer Vent Cleaning with the Purchase of a Yearly Maintenance Plan",
   "date": "2025-09-29",
   "excerpt": "This fall, protect your home and save money. Purchase an HVAC maintenance plan and receive a FREE dryer vent inspection and cleaning — comfort, safety, and efficiency bundled together.",
-  "image": "/blog/hvac-maintenance-dryer-vent-special.webp"
+  "image": "/blog/hvac-maintenance-dryer-vent-special.webp",
+  "tags": ["HVAC maintenance", "dryer vent", "fall special", "Conroe", "promotion"]
 },
 {
   "slug": "hvac-maintenance-costs-conroe",
   "title": "The Hidden Costs of Neglect: What Skipping Maintenance Really Costs Conroe Homeowners",
   "date": "2025-10-12",
   "excerpt": "Skipping HVAC maintenance might save time now, but it costs Conroe homeowners hundreds later in energy waste, repairs, and safety risks.",
-  "image": "/blog/hvac-maintenance-costs-conroe.webp"
+  "image": "/blog/hvac-maintenance-costs-conroe.webp",
+  "tags": ["HVAC maintenance", "cost savings", "Conroe", "energy efficiency", "repairs"]
 }
 ]

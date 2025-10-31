@@ -4,10 +4,10 @@ import { IoClose } from 'react-icons/io5';
 // 🔧 Set your Calendly/service booking link here
 const CALENDLY_URL = 'https://calendly.com/admin-amwairconditioning?embed_domain=www.amwairconditioning.com&embed_type=Inline'; // <-- replace
 
-// Helper: within September 2025 (local time)
+// Helper: within promo window (local time)
 const isActivePromoWindow = (now = new Date()) => {
-  const start = new Date(2025, 9, 1, 0, 0, 0);  // Sep 1, 2025
-  const end   = new Date(2025, 10, 1, 0, 0, 0);  // Oct 1, 2025 (exclusive)
+  const start = new Date(2025, 9, 1, 0, 0, 0);  // Oct 1, 2025
+  const end   = new Date(2025, 11, 1, 0, 0, 0);  // Dec 1, 2025 (exclusive)
   return now >= start && now < end;
 };
 
@@ -16,22 +16,22 @@ const IncentiveBanner = () => {
   const active = useMemo(() => isActivePromoWindow(), []);
 
   useEffect(() => {
-    const flag = window.localStorage.getItem('amw_promo_sep2025_dismissed');
+    const flag = window.localStorage.getItem('amw_promo_dec2025_dismissed');
     if (flag === '1') setDismissed(true);
   }, []);
 
   const handleClose = () => {
     setDismissed(true);
-    window.localStorage.setItem('amw_promo_sep2025_dismissed', '1');
+    window.localStorage.setItem('amw_promo_dec2025_dismissed', '1');
   };
 
-  // Countdown to Oct 1, 2025
+  // Countdown to Dec 1, 2025
   const [now, setNow] = useState(new Date());
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(id);
   }, []);
-  const deadline = new Date(2025, 10, 1, 0, 0, 0);
+  const deadline = new Date(2025, 11, 1, 0, 0, 0);
   const remainingMs = Math.max(0, deadline - now);
   const days    = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
   const hours   = Math.floor((remainingMs / (1000 * 60 * 60)) % 24);
@@ -45,10 +45,13 @@ const IncentiveBanner = () => {
         {/* Copy */}
         <div className="flex-1">
           <p className="text-sm md:text-base font-semibold">
-            🔥 October Special: <span className="underline decoration-white/60">Get a FREE Dryer Vent Inspection/Cleaning with the Purhcase of a Yearly Maintenance Plan!</span>
+            🔥 Fall Special: <span className="underline decoration-white/60">Get a FREE Dryer Vent Inspection/Cleaning with the Purchase of a Yearly Maintenance Plan!</span>
           </p>
-          <p className="text-[12px] md:text-sm text-white/90">
-            Book by Oct. 30 · Conroe, The Woodlands, Spring & nearby · Licensed & insured · Veteran-owned
+          <p className="text-[12px] md:text-sm text-white/90 mb-1">
+            Book by Nov. 30 · Conroe, The Woodlands, Spring & nearby · Licensed & insured · Veteran-owned
+          </p>
+          <p className="text-[12px] md:text-sm text-yellow-200 font-medium">
+            ⭐ Veteran Discounts Available - Please Call
           </p>
         </div>
 
