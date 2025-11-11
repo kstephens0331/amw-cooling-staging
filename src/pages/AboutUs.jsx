@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import nateLogo from '../assets/images/nate.webp';
 import Anjelica from '../assets/images/DSC_2077.webp'
@@ -8,11 +9,12 @@ import Footer from '../components/Footer';
 export default function AboutUs() {
   return (
     <div className="bg-white text-gray-800 font-sans">
-      <Helmet>
-        <title>About Us | AMW Cooling & Heating LLC</title>
-        <meta name="description" content="Learn about the AMW Cooling & Heating team and their commitment to reliable HVAC solutions in Texas." />
-        <meta name="keywords" content="AMW Cooling & Heating, HVAC services, About Us, Conroe TX, The Woodlands" />
-      </Helmet>
+      <SEO
+        title="About AMW Cooling & Heating | Veteran-Owned HVAC Conroe TX"
+        description="Learn about AMW Cooling & Heating, a veteran-owned HVAC company serving Conroe, TX. Meet our team and discover our commitment to quality service."
+        canonical="https://amwairconditioning.com/about"
+        keywords="about AMW, veteran owned HVAC Conroe, HVAC company Conroe, AMW team"
+      />
 
       {/* Page Content */}
       <main>
