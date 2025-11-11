@@ -121,6 +121,30 @@ const Navbar = () => {
                 Our Services
               </Link>
               <Link
+                to="/services/ac-repair"
+                className="block px-4 py-2 hover:bg-gray-50"
+                role="menuitem"
+                onClick={forceCloseServices}
+              >
+                AC Repair
+              </Link>
+              <Link
+                to="/services/heating-repair"
+                className="block px-4 py-2 hover:bg-gray-50"
+                role="menuitem"
+                onClick={forceCloseServices}
+              >
+                Heating Repair
+              </Link>
+              <Link
+                to="/services/hvac-maintenance"
+                className="block px-4 py-2 hover:bg-gray-50"
+                role="menuitem"
+                onClick={forceCloseServices}
+              >
+                HVAC Maintenance
+              </Link>
+              <Link
                 to="/additional-services"
                 className="block px-4 py-2 hover:bg-gray-50"
                 role="menuitem"
@@ -166,6 +190,9 @@ const Navbar = () => {
           <div className="pt-2 border-t border-gray-100">
             <div className="text-xs font-semibold uppercase text-gray-500 mb-1">Services</div>
             <Link to="/services" className="block" onClick={closeMenu}>Our Services</Link>
+            <Link to="/services/ac-repair" className="block" onClick={closeMenu}>AC Repair</Link>
+            <Link to="/services/heating-repair" className="block" onClick={closeMenu}>Heating Repair</Link>
+            <Link to="/services/hvac-maintenance" className="block" onClick={closeMenu}>HVAC Maintenance</Link>
             <Link to="/additional-services" className="block" onClick={closeMenu}>Additional Services</Link>
             <Link to="/blog" className="block" onClick={closeMenu}>HVAC Blog</Link>
           </div>
