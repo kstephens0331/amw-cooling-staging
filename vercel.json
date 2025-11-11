@@ -1,9 +1,4 @@
 {
-  "build": {
-    "env": {
-      "SKIP_REACT_SNAP": "true"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
