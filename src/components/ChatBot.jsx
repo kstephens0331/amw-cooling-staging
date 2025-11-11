@@ -10,6 +10,7 @@ export default function ChatBot() {
   const [input, setInput] = useState('');
   const [showContactForm, setShowContactForm] = useState(false);
   const [contactFormData, setContactFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [chatHistorySent, setChatHistorySent] = useState(false);
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -83,10 +84,37 @@ export default function ChatBot() {
     }
   };
 
+  const handleCloseChat = async () => {
+    // Send chat history email if there were user messages and it hasn't been sent yet
+    const hasUserMessages = messages.some(msg => msg.from === 'user');
+
+    if (hasUserMessages && !chatHistorySent) {
+      try {
+        // Format chat history for email
+        const chatHistory = messages.map(msg => `${msg.from === 'bot' ? 'AMW Assistant' : 'Customer'}: ${msg.text}`).join('\n\n');
+
+        await axios.post(
+          'https://amw-cooling-heating-chatbot-server-production.up.railway.app/api/send-chat-history',
+          {
+            chatHistory,
+            timestamp: new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })
+          }
+        );
+
+        setChatHistorySent(true);
+      } catch (error) {
+        console.error('Failed to send chat history:', error);
+        // Still close the chat even if email fails
+      }
+    }
+
+    setIsOpen(false);
+  };
+
   return (
     <div className="fixed bottom-6 left-6 z-60 flex flex-col items-start">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => isOpen ? handleCloseChat() : setIsOpen(true)}
         className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full shadow-lg transition flex items-center gap-2"
       >
         {isOpen ? (
