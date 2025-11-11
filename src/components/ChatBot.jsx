@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { from: 'bot', text: "Hi there! I'm the AMW Assistant. How can I help you today?" },
+    { from: 'bot', text: "Hey! Thanks for reaching out to AMW Cooling & Heating. What's your name?" },
   ]);
   const [input, setInput] = useState('');
   const [showContactForm, setShowContactForm] = useState(false);
