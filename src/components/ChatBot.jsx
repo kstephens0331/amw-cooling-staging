@@ -105,7 +105,7 @@ export default function ChatBot() {
       {isOpen && (
         <div className="mt-2 w-72 max-h-[80vh] bg-white border border-gray-300 rounded-2xl shadow-lg overflow-hidden flex flex-col">
           <div className="bg-blue-600 text-white px-4 py-2 flex items-center space-x-2">
-            <img src="/assets/logo.png" alt="AMW Logo" className="w-6 h-6 rounded-full" />
+            <img src="/assets/images/logo-optimized.webp" alt="AMW Logo" className="w-6 h-6 rounded-full" />
             <h2 className="text-sm font-semibold">AMW Assistant</h2>
           </div>
 
