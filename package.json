@@ -27,7 +27,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "react-snap",
+    "postbuild": "echo 'Build complete - react-snap disabled for Vercel'",
+    "build:snap": "react-scripts build && react-snap",
     "generate:sitemap": "node scripts/generate-sitemap.js",
     "prebuild": "npm run generate:sitemap",
     "test": "react-scripts test",
