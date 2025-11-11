@@ -38,8 +38,7 @@ export default function AboutUs() {
         <div className="order-2 lg:order-2 text-sm md:text-base text-gray-700">
           <h3 className="text-2xl font-semibold text-blue-800 mb-4">Our Story</h3>
           <p>
-            AMW Cooling & Heating LLC was founded with a clear mission: to provide reliable, high-quality HVAC services across Texas, with a strong<br></br> focus on the needs of residential and light commercial customers.
-            As a family- and veteran-owned business with over eight years of experience,<br></br> Joshua and Anjelica are dedicated to ensuring that every home and business they serve enjoys year-round comfort and efficiency.
+            AMW Cooling & Heating LLC was founded with a clear mission: to provide reliable, high-quality HVAC services across Texas, with a strong focus on the needs of residential and light commercial customers. As a family- and veteran-owned business with over eight years of experience, Joshua and Anjelica are dedicated to ensuring that every home and business they serve enjoys year-round comfort and efficiency.
           </p>
         </div>
         <div className="order-1 lg:order-1">
@@ -71,11 +70,7 @@ export default function AboutUs() {
         <div className="order-1 lg:order-2 text-sm md:text-base text-gray-700">
           <h3 className="text-2xl font-semibold text-blue-800 mb-4">Meet The Owners</h3>
           <p>
-            As veterans, Josh and Anjelica have always lived by a strong sense of service—first to their country,<br></br> and now to their community.
-            With more than eight years of HVAC experience, Josh envisioned creating<br></br> a company built on honesty, expertise, and unwavering dedication
-            to customer care. Their business is<br></br> founded on the same core values that guided them in the military: integrity, dedication, and a
-            commitment<br></br> to delivering the highest quality of service. Beyond their work, Josh enjoys quality time with family and<br></br> exploring the great outdoors.
-            Anjelica shares that same passion for family and giving back to the community.
+            As veterans, Josh and Anjelica have always lived by a strong sense of service—first to their country, and now to their community. With more than eight years of HVAC experience, Josh envisioned creating a company built on honesty, expertise, and unwavering dedication to customer care. Their business is founded on the same core values that guided them in the military: integrity, dedication, and a commitment to delivering the highest quality of service. Beyond their work, Josh enjoys quality time with family and exploring the great outdoors. Anjelica shares that same passion for family and giving back to the community.
           </p>
         </div>
       </motion.div>
