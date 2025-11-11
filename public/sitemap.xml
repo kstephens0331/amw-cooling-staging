@@ -91,11 +91,65 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://amwairconditioning.com/services/ductwork</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amwairconditioning.com/services/thermostat-installation</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Location Pages -->
+  <url>
     <loc>https://amwairconditioning.com/locations/conroe-tx</loc>
-    <lastmod>2025-11-11</lastmod>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://amwairconditioning.com/locations/the-woodlands-tx</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://amwairconditioning.com/locations/montgomery-tx</loc>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://amwairconditioning.com/locations/willis-tx</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amwairconditioning.com/locations/cut-and-shoot-tx</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Additional Pages -->
+  <url>
+    <loc>https://amwairconditioning.com/faq</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://amwairconditioning.com/reviews</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog Posts -->
   <url>
     <loc>https://amwairconditioning.com/blog/winter-maintenance-tips-conroe</loc>
     <lastmod>2025-11-11</lastmod>
@@ -138,4 +192,21 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!--
+  NOTE: As you add blog posts, add them here with this format:
+
+  <url>
+    <loc>https://amwairconditioning.com/blog/10-signs-your-ac-needs-repair-conroe</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  Blog posts should have:
+  - changefreq: yearly (they don't change often)
+  - priority: 0.6
+  - Update lastmod when you edit them
+  -->
+
 </urlset>
