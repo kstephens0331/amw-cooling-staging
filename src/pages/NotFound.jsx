@@ -14,7 +14,7 @@ export default function NotFound() {
       <main className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex flex-col items-center justify-center text-center px-4">
         {/* Logo or graphic */}
         <img
-          src="/assets/images/FullLogo_Transparent.webp"
+          src="/logo192.png"
           alt="AMW Cooling & Heating Logo"
           className="w-40 mb-6"
         />
