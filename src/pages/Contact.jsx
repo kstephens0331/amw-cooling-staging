@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import axios from 'axios';
 import logo from '../assets/images/FullLogo_Transparent.webp';
 import Footer from '../components/Footer';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [formStatus, setFormStatus] = useState('');
+
   useEffect(() => {
     // Load Calendly CSS
     const link = document.createElement('link');
@@ -23,6 +27,32 @@ export default function Contact() {
       document.body.removeChild(script);
     };
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus('sending');
+
+    try {
+      await axios.post(
+        'https://amw-cooling-heating-chatbot-server-production.up.railway.app/api/send-email',
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          source: 'contact-form',
+        }
+      );
+
+      setFormStatus('success');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setTimeout(() => setFormStatus(''), 5000);
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setFormStatus('error');
+      setTimeout(() => setFormStatus(''), 5000);
+    }
+  };
 
   return (
     <div className="bg-white text-gray-800 font-sans min-h-screen">
@@ -47,36 +77,70 @@ export default function Contact() {
         <div className="flex flex-col md:flex-row gap-8">
           {/* Contact Form */}
           <form
-            action="https://formspree.io/f/mqabprnq"
-            method="POST"
+            onSubmit={handleSubmit}
             className="flex-1 bg-gray-50 p-6 rounded-lg shadow-md"
           >
             <div className="mb-4">
               <label className="block text-sm font-semibold mb-1">Full Name</label>
-              <input name="name" type="text" className="w-full border border-gray-300 rounded px-3 py-2" required />
+              <input
+                name="name"
+                type="text"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="w-full border border-gray-300 rounded px-3 py-2"
+                required
+              />
             </div>
 
             <div className="mb-4">
               <label className="block text-sm font-semibold mb-1">Email Address</label>
-              <input name="email" type="email" className="w-full border border-gray-300 rounded px-3 py-2" required />
+              <input
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="w-full border border-gray-300 rounded px-3 py-2"
+                required
+              />
             </div>
 
             <div className="mb-4">
               <label className="block text-sm font-semibold mb-1">Phone Number</label>
-              <input name="phone" type="tel" className="w-full border border-gray-300 rounded px-3 py-2" />
+              <input
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                className="w-full border border-gray-300 rounded px-3 py-2"
+              />
             </div>
 
             <div className="mb-4">
               <label className="block text-sm font-semibold mb-1">Message</label>
-              <textarea name="message" rows="5" className="w-full border border-gray-300 rounded px-3 py-2" required></textarea>
+              <textarea
+                name="message"
+                rows="5"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className="w-full border border-gray-300 rounded px-3 py-2"
+                required
+              ></textarea>
             </div>
 
             <button
               type="submit"
-              className="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition text-sm"
+              disabled={formStatus === 'sending'}
+              className="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition text-sm disabled:bg-gray-400"
             >
-              Send Message
+              {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
+
+            {formStatus === 'success' && (
+              <p className="mt-3 text-green-600 text-sm">Message sent successfully! We'll get back to you soon.</p>
+            )}
+            {formStatus === 'error' && (
+              <p className="mt-3 text-red-600 text-sm">Failed to send message. Please call us at (936) 331-1339.</p>
+            )}
           </form>
 
           {/* Business Contact Info */}

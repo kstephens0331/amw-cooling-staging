@@ -8,6 +8,8 @@ export default function ChatBot() {
     { from: 'bot', text: "Hi there! I'm the AMW Assistant. How can I help you today?" },
   ]);
   const [input, setInput] = useState('');
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [contactFormData, setContactFormData] = useState({ name: '', email: '', phone: '', message: '' });
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -15,9 +17,10 @@ export default function ChatBot() {
     const newUserMessage = { from: 'user', text: input };
     const updatedMessages = [...messages, newUserMessage];
     setMessages(updatedMessages);
+    setInput('');
 
     try {
-      // Call backend server (Railway)
+      // Call Railway backend (keeps API key secure server-side)
       const response = await axios.post(
         'https://amw-cooling-heating-chatbot-server-production.up.railway.app/api/chat',
         {
@@ -31,6 +34,16 @@ export default function ChatBot() {
 
       const botReply = response.data.message;
       setMessages((prev) => [...prev, { from: 'bot', text: botReply }]);
+
+      // Check if bot suggests speaking to someone (trigger contact form)
+      if (botReply.toLowerCase().includes('call us') || botReply.toLowerCase().includes('speak with') || botReply.toLowerCase().includes('contact us')) {
+        setTimeout(() => {
+          setMessages((prev) => [
+            ...prev,
+            { from: 'bot', text: "Would you like me to have someone reach out to you? Click the button below to share your contact information.", isAction: true },
+          ]);
+        }, 500);
+      }
     } catch (error) {
       console.error('Chatbot Error:', error);
       setMessages((prev) => [
@@ -38,8 +51,36 @@ export default function ChatBot() {
         { from: 'bot', text: "Oops! Something went wrong. Please try again or call us at (936) 331-1339 for immediate assistance." },
       ]);
     }
+  };
 
-    setInput('');
+  const handleContactFormSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post(
+        'https://amw-cooling-heating-chatbot-server-production.up.railway.app/api/send-email',
+        {
+          name: contactFormData.name,
+          email: contactFormData.email,
+          phone: contactFormData.phone,
+          message: contactFormData.message,
+          source: 'chatbot',
+        }
+      );
+
+      setMessages((prev) => [
+        ...prev,
+        { from: 'bot', text: "Thank you! Your information has been sent to our team. Someone will reach out to you shortly at the contact information you provided." },
+      ]);
+      setShowContactForm(false);
+      setContactFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setMessages((prev) => [
+        ...prev,
+        { from: 'bot', text: "Sorry, there was an issue submitting your information. Please call us directly at (936) 331-1339." },
+      ]);
+    }
   };
 
   return (
@@ -70,17 +111,80 @@ export default function ChatBot() {
 
           <div className="flex-1 p-4 overflow-y-auto text-sm text-gray-700 space-y-2">
             {messages.map((msg, idx) => (
-              <div
-                key={idx}
-                className={
-                  msg.from === 'bot'
-                    ? 'text-left bg-gray-100 p-2 rounded shadow-sm'
-                    : 'text-right bg-blue-100 text-blue-800 p-2 rounded shadow-sm'
-                }
-              >
-                {msg.text}
+              <div key={idx}>
+                <div
+                  className={
+                    msg.from === 'bot'
+                      ? 'text-left bg-gray-100 p-2 rounded shadow-sm'
+                      : 'text-right bg-blue-100 text-blue-800 p-2 rounded shadow-sm'
+                  }
+                >
+                  {msg.text}
+                </div>
+                {msg.isAction && (
+                  <button
+                    onClick={() => setShowContactForm(true)}
+                    className="mt-2 bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition"
+                  >
+                    Request Callback
+                  </button>
+                )}
               </div>
             ))}
+
+            {showContactForm && (
+              <div className="bg-white border border-gray-300 p-3 rounded shadow-md">
+                <h3 className="font-semibold text-gray-800 mb-2 text-sm">Request a Callback</h3>
+                <form onSubmit={handleContactFormSubmit} className="space-y-2">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    value={contactFormData.name}
+                    onChange={(e) => setContactFormData({ ...contactFormData, name: e.target.value })}
+                    className="w-full p-2 text-xs border border-gray-300 rounded"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    value={contactFormData.email}
+                    onChange={(e) => setContactFormData({ ...contactFormData, email: e.target.value })}
+                    className="w-full p-2 text-xs border border-gray-300 rounded"
+                    required
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={contactFormData.phone}
+                    onChange={(e) => setContactFormData({ ...contactFormData, phone: e.target.value })}
+                    className="w-full p-2 text-xs border border-gray-300 rounded"
+                    required
+                  />
+                  <textarea
+                    placeholder="Additional details (optional)"
+                    value={contactFormData.message}
+                    onChange={(e) => setContactFormData({ ...contactFormData, message: e.target.value })}
+                    className="w-full p-2 text-xs border border-gray-300 rounded"
+                    rows="2"
+                  ></textarea>
+                  <div className="flex gap-2">
+                    <button
+                      type="submit"
+                      className="flex-1 bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition"
+                    >
+                      Submit
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setShowContactForm(false)}
+                      className="flex-1 bg-gray-300 text-gray-700 px-3 py-1 rounded text-xs hover:bg-gray-400 transition"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
           </div>
 
           <div className="border-t p-2 flex items-center space-x-2">
