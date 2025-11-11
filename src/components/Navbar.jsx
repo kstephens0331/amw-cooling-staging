@@ -50,9 +50,6 @@ const Navbar = () => {
     } else if (q.includes('services') || q.includes('repair')) {
       speak('Showing our services.');
       navigate('/services');
-    } else if (q.includes('additional services') || q.includes('extras') || q.includes('duct')) {
-      speak('Opening additional services.');
-      navigate('/additional-services');
     } else if (q.includes('blog') || q.includes('tips') || q.includes('articles')) {
       speak('Opening our HVAC blog.');
       navigate('/blog');
@@ -145,12 +142,28 @@ const Navbar = () => {
                 HVAC Maintenance
               </Link>
               <Link
-                to="/additional-services"
+                to="/services/indoor-air-quality"
                 className="block px-4 py-2 hover:bg-gray-50"
                 role="menuitem"
                 onClick={forceCloseServices}
               >
-                Additional Services
+                Indoor Air Quality
+              </Link>
+              <Link
+                to="/services/smart-thermostats"
+                className="block px-4 py-2 hover:bg-gray-50"
+                role="menuitem"
+                onClick={forceCloseServices}
+              >
+                Smart Thermostats
+              </Link>
+              <Link
+                to="/services/dryer-vent-cleaning"
+                className="block px-4 py-2 hover:bg-gray-50"
+                role="menuitem"
+                onClick={forceCloseServices}
+              >
+                Dryer Vent Cleaning
               </Link>
               <Link
                 to="/blog"
@@ -193,7 +206,9 @@ const Navbar = () => {
             <Link to="/services/ac-repair" className="block" onClick={closeMenu}>AC Repair</Link>
             <Link to="/services/heating-repair" className="block" onClick={closeMenu}>Heating Repair</Link>
             <Link to="/services/hvac-maintenance" className="block" onClick={closeMenu}>HVAC Maintenance</Link>
-            <Link to="/additional-services" className="block" onClick={closeMenu}>Additional Services</Link>
+            <Link to="/services/indoor-air-quality" className="block" onClick={closeMenu}>Indoor Air Quality</Link>
+            <Link to="/services/smart-thermostats" className="block" onClick={closeMenu}>Smart Thermostats</Link>
+            <Link to="/services/dryer-vent-cleaning" className="block" onClick={closeMenu}>Dryer Vent Cleaning</Link>
             <Link to="/blog" className="block" onClick={closeMenu}>HVAC Blog</Link>
           </div>
 

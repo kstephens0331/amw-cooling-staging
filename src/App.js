@@ -22,12 +22,14 @@ const HeroLandingPage = lazy(() => import('./components/HeroLandingPage'));
 const ContactUsDuplicate = lazy(() => import('./pages/Contact-us'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
-const AdditionalServices = lazy(() => import('./pages/AdditionalServices'));
 
 // Service pages
 const ACRepair = lazy(() => import('./pages/services/ACRepair'));
 const HeatingRepair = lazy(() => import('./pages/services/HeatingRepair'));
 const HVACMaintenance = lazy(() => import('./pages/services/HVACMaintenance'));
+const IndoorAirQuality = lazy(() => import('./pages/services/IndoorAirQuality'));
+const SmartThermostats = lazy(() => import('./pages/services/SmartThermostats'));
+const DryerVentCleaning = lazy(() => import('./pages/services/DryerVentCleaning'));
 
 // Location pages
 const ConroeTX = lazy(() => import('./pages/locations/ConroeTX'));
@@ -135,15 +137,6 @@ function App() {
   }
 />
 
-<Route
-  path="/additional-services"
-  element={
-    <Suspense fallback={<div>Loading Additional Services...</div>}>
-      <AdditionalServices />
-    </Suspense>
-  }
-/>
-
 {/* Service Routes */}
 <Route
   path="/services/ac-repair"
@@ -166,6 +159,30 @@ function App() {
   element={
     <Suspense fallback={<div>Loading HVAC Maintenance...</div>}>
       <HVACMaintenance />
+    </Suspense>
+  }
+/>
+<Route
+  path="/services/indoor-air-quality"
+  element={
+    <Suspense fallback={<div>Loading Indoor Air Quality...</div>}>
+      <IndoorAirQuality />
+    </Suspense>
+  }
+/>
+<Route
+  path="/services/smart-thermostats"
+  element={
+    <Suspense fallback={<div>Loading Smart Thermostats...</div>}>
+      <SmartThermostats />
+    </Suspense>
+  }
+/>
+<Route
+  path="/services/dryer-vent-cleaning"
+  element={
+    <Suspense fallback={<div>Loading Dryer Vent Cleaning...</div>}>
+      <DryerVentCleaning />
     </Suspense>
   }
 />

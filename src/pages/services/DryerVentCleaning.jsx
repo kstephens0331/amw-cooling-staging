@@ -1,0 +1,217 @@
+import React from 'react';
+import SEO from '../../components/SEO';
+import { ServiceSchema, BreadcrumbSchema } from '../../components/StructuredData';
+import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer';
+
+const DryerVentCleaning = () => {
+  return (
+    <>
+      <SEO
+        title="Dryer Vent Cleaning Conroe TX | Fire Prevention Service | AMW"
+        description="Professional dryer vent cleaning in Conroe, TX. Prevent fires, improve efficiency, reduce drying time. 15,000+ fires prevented annually. Call (936) 331-1339!"
+        canonical="https://amwairconditioning.com/services/dryer-vent-cleaning"
+        keywords="dryer vent cleaning Conroe, dryer vent service Conroe TX, lint removal, dryer fire prevention, dryer vent repair Conroe"
+      />
+
+      <ServiceSchema
+        service={{
+          name: "Dryer Vent Cleaning",
+          description: "Professional dryer vent cleaning services in Conroe, TX to prevent fires and improve dryer efficiency."
+        }}
+        city="Conroe"
+      />
+
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: "Dryer Vent Cleaning", path: "/services/dryer-vent-cleaning" }
+        ]}
+      />
+
+      <main className="bg-gray-50 text-gray-800 font-sans">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-orange-50 to-white py-12">
+          <div className="container mx-auto text-center px-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+              Professional Dryer Vent Cleaning in Conroe, TX
+            </h1>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-6">
+              Protect your family and save energy with expert dryer vent cleaning
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href="tel:+19363311339"
+                className="inline-block px-6 py-3 bg-orange-500 text-white rounded shadow hover:bg-orange-600 transition"
+              >
+                📞 Call (936) 331-1339
+              </a>
+              <Link
+                to="/contact"
+                className="inline-block px-6 py-3 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition"
+              >
+                📧 Schedule Service
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Main Content */}
+        <section className="container mx-auto px-4 py-12 max-w-4xl">
+          <article className="bg-white p-8 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold text-blue-900 mb-4">
+              Expert Dryer Vent Cleaning Services
+            </h2>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              Clogged dryer vents are a leading cause of house fires in the United States, responsible for over
+              15,000 fires, 15 deaths, and 400+ injuries annually according to the U.S. Fire Administration.
+              Beyond this serious safety hazard, restricted airflow forces your dryer to work harder, dramatically
+              increasing energy costs, reducing appliance lifespan, and extending drying times. AMW Cooling & Heating
+              provides thorough professional dryer vent cleaning to protect your Conroe home and family.
+            </p>
+
+            <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+              <h3 className="font-semibold text-red-900 mb-2">🔥 FIRE SAFETY ALERT</h3>
+              <p className="text-red-800 text-sm">
+                The National Fire Protection Association reports that failure to clean dryer vents is the
+                leading cause of dryer fires. Lint is highly flammable and accumulates quickly in vent systems.
+                Regular professional cleaning is essential for your family's safety.
+              </p>
+            </div>
+
+            <h3 className="text-xl font-semibold text-blue-900 mb-3">
+              Signs Your Dryer Vent Needs Cleaning
+            </h3>
+            <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
+              <li><strong>Extended Drying Time</strong> - Clothes taking 2-3 cycles to dry completely</li>
+              <li><strong>Hot Exterior</strong> - Dryer or laundry room unusually hot during operation</li>
+              <li><strong>Burning Smell</strong> - Smell of burning lint when dryer runs (STOP IMMEDIATELY)</li>
+              <li><strong>Excess Lint</strong> - Lint accumulating around dryer door or on clothing</li>
+              <li><strong>No Exterior Vent Airflow</strong> - Little or no air coming from outside vent opening</li>
+              <li><strong>Vent Hood Won't Open</strong> - Exterior flap remains closed when dryer runs</li>
+              <li><strong>High Energy Bills</strong> - Increased electricity costs from inefficient drying</li>
+              <li><strong>Musty Odor</strong> - Moisture trapped in vent causing mildew smell</li>
+              <li><strong>One Year Since Last Cleaning</strong> - NFPA recommends annual professional cleaning</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-blue-900 mb-3">
+              Our Professional Dryer Vent Cleaning Process
+            </h3>
+            <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
+              <li><strong>Complete Inspection</strong> - Examine entire vent system from dryer to exterior</li>
+              <li><strong>Disconnect & Access</strong> - Safely disconnect dryer and access full vent line</li>
+              <li><strong>Specialized Equipment</strong> - High-powered vacuum with rotary brush system</li>
+              <li><strong>Full-Length Cleaning</strong> - Remove ALL lint from entire vent length, not just near the dryer</li>
+              <li><strong>Exterior Vent Cleaning</strong> - Clean and verify proper function of exterior vent hood</li>
+              <li><strong>Behind-Dryer Cleaning</strong> - Remove lint accumulation behind and around dryer</li>
+              <li><strong>Dryer Lint Trap Cleaning</strong> - Deep clean mesh filter screen</li>
+              <li><strong>Connection Inspection</strong> - Check for damage, disconnections, or improper installation</li>
+              <li><strong>Airflow Testing</strong> - Verify proper exhaust airflow after cleaning</li>
+              <li><strong>Reconnection & Testing</strong> - Properly reconnect dryer and run test cycle</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-blue-900 mb-3">
+              Benefits of Professional Dryer Vent Cleaning
+            </h3>
+            <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
+              <li><strong>Fire Prevention</strong> - Eliminate the #1 cause of dryer fires (failure to clean)</li>
+              <li><strong>Energy Savings</strong> - Reduce dryer energy consumption by 30-50% with unrestricted airflow</li>
+              <li><strong>Faster Drying</strong> - Clothes dry completely in one normal cycle</li>
+              <li><strong>Extended Appliance Life</strong> - Prevent overheating that damages heating elements and motors</li>
+              <li><strong>Lower Utility Bills</strong> - Efficient operation significantly reduces electricity costs</li>
+              <li><strong>Prevent Moisture Damage</strong> - Proper venting prevents humidity problems in laundry area</li>
+              <li><strong>Eliminate Odors</strong> - Remove musty smells from trapped moisture</li>
+              <li><strong>Reduced Wear on Clothes</strong> - Proper drying is gentler on fabrics</li>
+              <li><strong>Carbon Monoxide Safety</strong> - (Gas dryers) Ensure proper exhaust of combustion gases</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-blue-900 mb-3">
+              How Often Should You Clean Your Dryer Vent?
+            </h3>
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              The National Fire Protection Association recommends professional dryer vent cleaning at least once
+              per year for typical households. However, you may need more frequent cleaning if you:
+            </p>
+            <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
+              <li>Have a large family running multiple loads daily</li>
+              <li>Own pets (pet hair increases lint accumulation)</li>
+              <li>Have a particularly long vent run (over 25 feet)</li>
+              <li>Have multiple elbows or bends in vent system</li>
+              <li>Use your dryer for commercial purposes (Airbnb, rental property)</li>
+              <li>Notice any warning signs listed above</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-blue-900 mb-3">
+              Common Dryer Vent Problems We Address
+            </h3>
+            <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
+              <li><strong>Lint Blockages</strong> - Complete or partial obstructions preventing proper airflow</li>
+              <li><strong>Damaged Vent Lines</strong> - Crushed, torn, or disconnected vent sections</li>
+              <li><strong>Improper Installation</strong> - Wrong materials, excessive length, too many bends</li>
+              <li><strong>Missing or Damaged Exterior Vent</strong> - Broken vent hood allowing pest entry</li>
+              <li><strong>Flexible Plastic/Foil Vents</strong> - Unsafe materials that should be replaced</li>
+              <li><strong>Vent Too Long</strong> - Exceeding manufacturer recommendations for vent length</li>
+              <li><strong>Bird Nests or Pest Blockages</strong> - Animals nesting in exterior vent opening</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-blue-900 mb-3">
+              Why Choose AMW for Dryer Vent Cleaning?
+            </h3>
+            <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
+              <li>Experienced HVAC technicians with specialized dryer vent equipment</li>
+              <li>Complete cleaning of entire vent system, not just near the dryer</li>
+              <li>Comprehensive inspection and safety check</li>
+              <li>Transparent pricing with no hidden fees</li>
+              <li>Same-day and next-day appointments available</li>
+              <li>Service all residential and light commercial dryer vents</li>
+              <li>Veteran-owned and locally operated in Conroe</li>
+              <li>100% satisfaction guaranteed</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-blue-900 mb-3">
+              Dryer Maintenance Tips Between Cleanings
+            </h3>
+            <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
+              <li>Clean lint trap after EVERY load (not just once per day)</li>
+              <li>Check exterior vent monthly to ensure airflow and proper flap operation</li>
+              <li>Never dry items with foam, rubber, or plastic (fire hazard)</li>
+              <li>Avoid overloading dryer (reduces efficiency and increases wear)</li>
+              <li>Use rigid metal vent pipe instead of flexible plastic/foil</li>
+              <li>Keep area around dryer clean and clear</li>
+              <li>Schedule professional cleaning annually or when warning signs appear</li>
+            </ul>
+
+            <div className="bg-orange-50 p-6 rounded-lg mt-8">
+              <h2 className="text-2xl font-semibold text-blue-900 mb-3">
+                Schedule Your Dryer Vent Cleaning Today
+              </h2>
+              <p className="text-gray-700 mb-4">
+                Don't wait for a fire or breakdown. Protect your Conroe home and family with professional
+                dryer vent cleaning from AMW Cooling & Heating.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="tel:+19363311339"
+                  className="inline-block px-6 py-3 bg-orange-500 text-white rounded shadow hover:bg-orange-600 transition text-center"
+                >
+                  Call (936) 331-1339
+                </a>
+                <Link
+                  to="/contact"
+                  className="inline-block px-6 py-3 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition text-center"
+                >
+                  Schedule Service Online
+                </Link>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <Footer />
+      </main>
+    </>
+  );
+};
+
+export default DryerVentCleaning;

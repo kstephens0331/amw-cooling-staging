@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import ManufacturerCarousel from '../components/ManufacturerCarousel';
 import Footer from '../components/Footer';
 import heating from '../assets/images/IMG_1163.webp';
@@ -146,18 +147,84 @@ export default function Services() {
           </div>
         </div>
 
-        {/* 6️⃣ Air Quality Solutions - IMAGE LEFT */}
+        {/* 6️⃣ Indoor Air Quality - IMAGE LEFT */}
         <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
-          <div className="w-full lg:w-1/2"><div className='w-[260px] h-[260px] transform rotate-45 overflow-hidden rounded-xl shadow-md mx-auto'><img src={air} alt="Air quality services" className='w-full h-full object-cover -rotate-45' loading="lazy"/></div>
-          </div>
+          <Link to="/services/indoor-air-quality" className="w-full lg:w-1/2 hover:opacity-80 transition">
+            <div className='w-[260px] h-[260px] transform rotate-45 overflow-hidden rounded-xl shadow-md mx-auto cursor-pointer'>
+              <img src={air} alt="Indoor air quality services" className='w-full h-full object-cover -rotate-45' loading="lazy"/>
+            </div>
+          </Link>
           <div className="w-full lg:w-1/2 text-sm md:text-base text-gray-700">
-            <h2 className="text-xl md:text-2xl font-semibold text-blue-900 mb-2">🌿 Air Quality Solutions</h2>
+            <Link to="/services/indoor-air-quality" className="hover:text-blue-700 transition">
+              <h2 className="text-xl md:text-2xl font-semibold text-blue-900 mb-2 cursor-pointer">🌿 Indoor Air Quality Solutions</h2>
+            </Link>
             <ul className="list-disc list-inside space-y-1">
-              <li><strong>Air Filtration</strong> – Cleaner, healthier air.</li>
-              <li><strong>Humidity Control</strong> – Comfort in every season.</li>
-              <li><strong>Air Purification</strong> – Eliminate allergens and pollutants.</li>
-              <li><strong>IAQ Testing</strong> – Comprehensive indoor air analysis.</li>
+              <li><strong>Advanced Air Filtration</strong> – HEPA filters capture 99.97% of particles.</li>
+              <li><strong>Whole-Home Dehumidifiers</strong> – Control humidity in Conroe's climate.</li>
+              <li><strong>UV Air Purification</strong> – Eliminate bacteria, viruses, and mold.</li>
+              <li><strong>Ventilation Systems</strong> – Fresh air exchange with energy recovery.</li>
+              <li><strong>Allergen Reduction</strong> – Solutions for pollen, dust, and pet dander.</li>
             </ul>
+            <Link
+              to="/services/indoor-air-quality"
+              className="inline-block mt-3 text-blue-600 hover:text-blue-800 font-medium"
+            >
+              Learn More →
+            </Link>
+          </div>
+        </div>
+
+        {/* 7️⃣ Smart Thermostats - IMAGE RIGHT */}
+        <div className="flex flex-col lg:flex-row items-center gap-10">
+          <Link to="/services/smart-thermostats" className="w-full lg:w-1/2 hover:opacity-80 transition">
+            <div className='w-[260px] h-[260px] transform rotate-45 overflow-hidden rounded-xl shadow-md mx-auto cursor-pointer'>
+              <img src={cooling} alt="Smart thermostat installation" className='w-full h-full object-cover -rotate-45' loading="lazy"/>
+            </div>
+          </Link>
+          <div className="w-full lg:w-1/2 text-sm md:text-base text-gray-700">
+            <Link to="/services/smart-thermostats" className="hover:text-blue-700 transition">
+              <h2 className="text-xl md:text-2xl font-semibold text-blue-900 mb-2 cursor-pointer">📱 Smart Thermostat Installation</h2>
+            </Link>
+            <ul className="list-disc list-inside space-y-1">
+              <li><strong>Expert Installation</strong> – Nest, Ecobee, Honeywell, and more.</li>
+              <li><strong>Complete Setup</strong> – Wi-Fi configuration and app account creation.</li>
+              <li><strong>Energy Savings</strong> – Save 10-23% on heating and cooling costs.</li>
+              <li><strong>Remote Control</strong> – Adjust temperature from anywhere.</li>
+              <li><strong>Voice Integration</strong> – Works with Alexa, Google, and Siri.</li>
+            </ul>
+            <Link
+              to="/services/smart-thermostats"
+              className="inline-block mt-3 text-blue-600 hover:text-blue-800 font-medium"
+            >
+              Learn More →
+            </Link>
+          </div>
+        </div>
+
+        {/* 8️⃣ Dryer Vent Cleaning - IMAGE LEFT */}
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
+          <Link to="/services/dryer-vent-cleaning" className="w-full lg:w-1/2 hover:opacity-80 transition">
+            <div className='w-[260px] h-[260px] transform rotate-45 overflow-hidden rounded-xl shadow-md mx-auto cursor-pointer'>
+              <img src={ventilation} alt="Dryer vent cleaning services" className='w-full h-full object-cover -rotate-45' loading="lazy"/>
+            </div>
+          </Link>
+          <div className="w-full lg:w-1/2 text-sm md:text-base text-gray-700">
+            <Link to="/services/dryer-vent-cleaning" className="hover:text-blue-700 transition">
+              <h2 className="text-xl md:text-2xl font-semibold text-blue-900 mb-2 cursor-pointer">🔥 Professional Dryer Vent Cleaning</h2>
+            </Link>
+            <ul className="list-disc list-inside space-y-1">
+              <li><strong>Fire Prevention</strong> – Prevent 15,000+ annual dryer fires.</li>
+              <li><strong>Energy Savings</strong> – Reduce runtime by 30-50%.</li>
+              <li><strong>Improved Efficiency</strong> – Faster drying, lower utility bills.</li>
+              <li><strong>Complete Cleaning</strong> – Full vent system, not just lint trap.</li>
+              <li><strong>Safety Inspection</strong> – Check for damage and proper installation.</li>
+            </ul>
+            <Link
+              to="/services/dryer-vent-cleaning"
+              className="inline-block mt-3 text-blue-600 hover:text-blue-800 font-medium"
+            >
+              Learn More →
+            </Link>
           </div>
         </div>
 

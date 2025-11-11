@@ -17,20 +17,61 @@ export default function ChatBot() {
     setMessages(updatedMessages);
 
     try {
-      const response = await axios.post('https://amw-cooling-heating-chatbot-server-production.up.railway.app/api/chat', {
-        history: updatedMessages.map((m) => ({
-          role: m.from === 'bot' ? 'assistant' : 'user',
-          content: m.text,
-        })),
-        userMessage: input,
-      });
+      // Call Claude API directly from frontend
+      const response = await axios.post(
+        'https://api.anthropic.com/v1/messages',
+        {
+          model: 'claude-3-haiku-20240307',
+          max_tokens: 1024,
+          system: `You are a helpful HVAC assistant for AMW Cooling & Heating, LLC, a veteran-owned HVAC company serving Conroe, TX and surrounding areas.
 
-      const botReply = response.data.message;
+Company Information:
+- Phone: (936) 331-1339
+- Email: admin@amwairconditioning.com
+- Service Area: Conroe, The Woodlands, Montgomery, Willis, Spring, Magnolia, and surrounding Montgomery County areas
+- Website: https://amwairconditioning.com
+
+Services Offered:
+- AC Repair & Installation
+- Heating Repair & Installation (furnaces, heat pumps)
+- HVAC Maintenance & Tune-ups
+- Indoor Air Quality Solutions (HEPA filtration, UV purification, dehumidifiers)
+- Smart Thermostat Installation (Nest, Ecobee, Honeywell)
+- Dryer Vent Cleaning
+- 24/7 Emergency Services (5pm-9pm and weekends, additional charges apply)
+- New HVAC Installations
+- System Replacements
+
+Key Features:
+- Veteran-owned and operated
+- Licensed and insured
+- Same-day service available
+- Transparent pricing
+- 100% satisfaction guaranteed
+- Financing options available
+
+Answer questions about HVAC services, help schedule appointments, provide general advice, and direct urgent matters to call (936) 331-1339. Be helpful, professional, and knowledgeable about HVAC systems and Conroe's climate.`,
+          messages: updatedMessages.map((m) => ({
+            role: m.from === 'bot' ? 'assistant' : 'user',
+            content: m.text,
+          })),
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': process.env.REACT_APP_CLAUDE_API_KEY,
+            'anthropic-version': '2023-06-01',
+          },
+        }
+      );
+
+      const botReply = response.data.content[0].text;
       setMessages((prev) => [...prev, { from: 'bot', text: botReply }]);
     } catch (error) {
+      console.error('Claude API Error:', error);
       setMessages((prev) => [
         ...prev,
-        { from: 'bot', text: "Oops! Something went wrong. Please try again." },
+        { from: 'bot', text: "Oops! Something went wrong. Please try again or call us at (936) 331-1339 for immediate assistance." },
       ]);
     }
 
