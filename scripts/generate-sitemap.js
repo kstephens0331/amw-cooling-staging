@@ -17,7 +17,15 @@ const pages = [
   { url: '/testimonials', priority: '0.7', changefreq: 'monthly' },
   { url: '/blog', priority: '0.8', changefreq: 'weekly' },
 
-  // Blog posts - will add dynamically later
+  // Service pages
+  { url: '/services/ac-repair', priority: '0.9', changefreq: 'monthly' },
+  { url: '/services/heating-repair', priority: '0.9', changefreq: 'monthly' },
+  { url: '/services/hvac-maintenance', priority: '0.9', changefreq: 'monthly' },
+
+  // Location pages
+  { url: '/locations/conroe-tx', priority: '0.8', changefreq: 'monthly' },
+
+  // Blog posts
   { url: '/blog/winter-maintenance-tips-conroe', priority: '0.6', changefreq: 'monthly' },
   { url: '/blog/winter-hvac-preparation-conroe', priority: '0.6', changefreq: 'monthly' },
   { url: '/blog/dryer-vent-cleaning-safety-conroe', priority: '0.6', changefreq: 'monthly' },

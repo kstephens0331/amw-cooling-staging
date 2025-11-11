@@ -24,6 +24,14 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const AdditionalServices = lazy(() => import('./pages/AdditionalServices'));
 
+// Service pages
+const ACRepair = lazy(() => import('./pages/services/ACRepair'));
+const HeatingRepair = lazy(() => import('./pages/services/HeatingRepair'));
+const HVACMaintenance = lazy(() => import('./pages/services/HVACMaintenance'));
+
+// Location pages
+const ConroeTX = lazy(() => import('./pages/locations/ConroeTX'));
+
 
 function ScrollAndTrack() {
   const location = useLocation();
@@ -135,6 +143,43 @@ function App() {
     </Suspense>
   }
 />
+
+{/* Service Routes */}
+<Route
+  path="/services/ac-repair"
+  element={
+    <Suspense fallback={<div>Loading AC Repair...</div>}>
+      <ACRepair />
+    </Suspense>
+  }
+/>
+<Route
+  path="/services/heating-repair"
+  element={
+    <Suspense fallback={<div>Loading Heating Repair...</div>}>
+      <HeatingRepair />
+    </Suspense>
+  }
+/>
+<Route
+  path="/services/hvac-maintenance"
+  element={
+    <Suspense fallback={<div>Loading HVAC Maintenance...</div>}>
+      <HVACMaintenance />
+    </Suspense>
+  }
+/>
+
+{/* Location Routes */}
+<Route
+  path="/locations/conroe-tx"
+  element={
+    <Suspense fallback={<div>Loading Conroe Services...</div>}>
+      <ConroeTX />
+    </Suspense>
+  }
+/>
+
   <Route
     path="*"
     element={
