@@ -130,21 +130,19 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-// Email endpoint for chatbot callback requests
+// Email endpoint for chatbot callback requests only
 app.post('/api/send-email', async (req, res) => {
   try {
-    const { name, email, phone, message, source } = req.body;
+    const { name, email, phone, message } = req.body;
 
     if (!name || !email) {
       return res.status(400).json({ error: 'Name and email are required' });
     }
 
-    const emailSubject = source === 'chatbot'
-      ? 'AMW Website - Chatbot Callback Request'
-      : 'AMW Website - Contact Form Submission';
+    const emailSubject = 'AMW Website - Chatbot Callback Request';
 
     const emailBody = `
-New ${source === 'chatbot' ? 'Chatbot Callback' : 'Contact Form'} Request
+New Chatbot Callback Request
 
 Name: ${name}
 Email: ${email}
@@ -154,7 +152,7 @@ Message:
 ${message || 'No additional message provided'}
 
 ---
-Sent from AMW Cooling & Heating website
+Sent from AMW Cooling & Heating chatbot
 ${new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })}
     `;
 
