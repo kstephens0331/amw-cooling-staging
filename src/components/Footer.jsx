@@ -10,7 +10,8 @@ const Footer = () => {
         {/* Column 1: Company Info */}
         <div>
           <h3 className="font-bold text-lg mb-2">AMW Cooling & Heating</h3>
-          <p className="text-sm">Conroe, TX</p>
+          <p className="text-sm">2346 Strong Horse Dr</p>
+          <p className="text-sm">Conroe, TX 77301</p>
           <p className="text-sm">Phone: (936) 331-1339</p>
           <p className="text-sm">Email: admin@amwairconditioning.com</p>
           <p className="text-sm mt-2">License #: TACLB133920E</p>
