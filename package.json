@@ -27,8 +27,33 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "react-snap",
+    "generate:sitemap": "node scripts/generate-sitemap.js",
+    "prebuild": "npm run generate:sitemap",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "reactSnap": {
+    "inlineCss": true,
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    },
+    "skipThirdPartyRequests": true,
+    "cacheAjaxRequests": false,
+    "crawl": true,
+    "include": [
+      "/",
+      "/about",
+      "/services",
+      "/additional-services",
+      "/contact",
+      "/contact-us",
+      "/faqs",
+      "/financing",
+      "/testimonials",
+      "/blog"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +75,7 @@
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "react-snap": "^1.23.0"
   }
 }
