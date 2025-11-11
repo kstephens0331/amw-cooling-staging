@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import nateLogo from '../assets/images/nate.webp';
