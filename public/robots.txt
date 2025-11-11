@@ -78,7 +78,7 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Block admin areas (if they exist - adjust as needed)
+# Block admin areas and sensitive directories
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
@@ -86,12 +86,39 @@ Disallow: /api/
 Disallow: /.git/
 Disallow: /node_modules/
 
-# Allow important directories
-Allow: /services/
-Allow: /locations/
-Allow: /blog/
+# Allow main pages
+Allow: /
 Allow: /about
 Allow: /contact
+Allow: /contact-us
+Allow: /faqs
+Allow: /faq
+Allow: /financing
+Allow: /testimonials
+Allow: /reviews
+
+# Allow service pages
+Allow: /services/
+Allow: /services/ac-repair
+Allow: /services/heating-repair
+Allow: /services/hvac-maintenance
+Allow: /services/indoor-air-quality
+Allow: /services/smart-thermostats
+Allow: /services/dryer-vent-cleaning
+Allow: /services/ductwork
+Allow: /services/thermostat-installation
+
+# Allow location pages
+Allow: /locations/
+Allow: /locations/conroe-tx
+Allow: /locations/the-woodlands-tx
+Allow: /locations/montgomery-tx
+Allow: /locations/willis-tx
+Allow: /locations/cut-and-shoot-tx
+
+# Allow blog
+Allow: /blog/
+Allow: /blog/*
 
 # Sitemap location
 Sitemap: https://amwairconditioning.com/sitemap.xml
