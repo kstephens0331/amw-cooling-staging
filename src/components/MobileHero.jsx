@@ -8,8 +8,8 @@ export default function MobileHero() {
       <img
         src={hero}
         alt="AMW Cooling & Heating truck at sunset with phone number"
-        width="1920"
-        height="1080"
+        width="800"
+        height="600"
         className="absolute inset-0 w-full h-full object-cover object-bottom"
         loading="eager"
         decoding="async"
