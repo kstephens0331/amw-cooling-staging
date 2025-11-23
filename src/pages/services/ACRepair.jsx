@@ -117,12 +117,62 @@ const ACRepair = () => {
             </ul>
 
             <h3 className="text-xl font-semibold text-blue-900 mb-3">
-              Service Area
+              When to Call for AC Repair in Conroe
+            </h3>
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              In Conroe's hot, humid climate, your air conditioner works overtime from April through October.
+              Recognizing the signs of AC trouble early can save you money and prevent a complete breakdown
+              during the worst heat of summer. Here are the warning signs that mean it's time to call AMW:
+            </p>
+            <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700 ml-4">
+              <li><strong>Weak airflow:</strong> If some rooms aren't cooling properly, you may have ductwork issues or a failing blower motor</li>
+              <li><strong>Warm air from vents:</strong> This often indicates low refrigerant levels or compressor problems</li>
+              <li><strong>Unusual smells:</strong> Burning odors could mean electrical issues, while musty smells suggest mold in the system</li>
+              <li><strong>Frequent cycling:</strong> If your AC turns on and off constantly, it's working too hard and wasting energy</li>
+              <li><strong>Rising energy bills:</strong> A sudden spike in electricity costs often means your AC is losing efficiency</li>
+              <li><strong>Age over 10 years:</strong> Older systems need more frequent repairs and may be nearing replacement</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-blue-900 mb-3">
+              AC Brands We Service in Conroe
+            </h3>
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Our technicians are trained and experienced in repairing all major HVAC brands. Whether you have
+              a residential split system or a commercial package unit, we have the expertise and parts to get
+              your AC running again. We commonly service:
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6 text-gray-700">
+              <div className="bg-gray-50 p-3 rounded">• Carrier</div>
+              <div className="bg-gray-50 p-3 rounded">• Trane</div>
+              <div className="bg-gray-50 p-3 rounded">• Lennox</div>
+              <div className="bg-gray-50 p-3 rounded">• Goodman</div>
+              <div className="bg-gray-50 p-3 rounded">• Rheem</div>
+              <div className="bg-gray-50 p-3 rounded">• York</div>
+              <div className="bg-gray-50 p-3 rounded">• American Standard</div>
+              <div className="bg-gray-50 p-3 rounded">• Bryant</div>
+              <div className="bg-gray-50 p-3 rounded">• Ruud</div>
+            </div>
+
+            <h3 className="text-xl font-semibold text-blue-900 mb-3">
+              Preventive Maintenance Saves Money
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              We provide professional AC repair services throughout Montgomery County
-              including Conroe, The Woodlands, Montgomery, Willis, Spring, Magnolia, and
-              surrounding communities in Texas.
+              The best AC repair is the one you never need. Regular maintenance can prevent up to 95% of AC
+              breakdowns and extend your system's lifespan by years. We recommend scheduling a tune-up in early
+              spring before the cooling season starts. Our maintenance service includes cleaning coils, checking
+              refrigerant levels, testing electrical components, and ensuring optimal airflow. Ask about our
+              maintenance plans that include priority service and discounts on repairs.
+            </p>
+
+            <h3 className="text-xl font-semibold text-blue-900 mb-3">
+              Serving Conroe and All of Montgomery County
+            </h3>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              As a local, veteran-owned business, we understand the unique climate challenges in Montgomery County.
+              We provide fast, professional AC repair services throughout Conroe, The Woodlands, Montgomery, Willis,
+              Cut and Shoot, Splendora, New Caney, Porter, and surrounding communities. Our technicians know the area
+              well and can typically reach you within an hour for emergency calls. We're proud to serve our neighbors
+              with honest, reliable HVAC service.
             </p>
 
             <div className="bg-blue-50 p-6 rounded-lg mt-8">
