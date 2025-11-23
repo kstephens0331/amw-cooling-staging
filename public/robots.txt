@@ -24,7 +24,8 @@
 # AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
 
 # BEGIN Cloudflare Managed content
-# Content-signal: search=yes,ai-train=no
+# Cloudflare content signals (comment only - not a robots.txt directive)
+# search=yes, ai-train=no
 
 User-Agent: *
 Allow: /
