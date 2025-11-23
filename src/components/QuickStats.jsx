@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import WhyChoose from '../assets/images/DSC_1930.webp';
 
 const stats = [
@@ -35,30 +34,18 @@ export default function QuickStats() {
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-2xl md:text-3xl font-semibold text-center text-blue-900 mb-4"
-        >
+        <h2 className="text-2xl md:text-3xl font-semibold text-center text-blue-900 mb-4 animate-fade-in-up">
           Our Impact in Numbers
-        </motion.h2>
+        </h2>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-12"
-        >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-12 animate-fade-in-up-delay">
           {stats.map((item, idx) => (
             <div key={idx} className="flex flex-col items-center">
               <div className="text-4xl md:text-5xl font-bold text-blue-900 mb-2">{item.number}</div>
               <div className="text-sm md:text-base text-gray-700">{item.label}</div>
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Divider / Visual break */}
         <div className="my-12 border-t border-gray-300 w-1/4 mx-auto"></div>

@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-PHMH5V5651"></script>
+  <!-- Google tag (gtag.js) - Deferred for performance -->
   <script>
-    // Cookieless GA4 configuration
+    // Cookieless GA4 configuration - Load after page interactive
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-PHMH5V5651', {
-      client_storage: 'none',
-      anonymize_ip: true
-    });
+
+    // Defer GA loading until after page is interactive
+    if (document.readyState === 'complete') {
+      loadGA();
+    } else {
+      window.addEventListener('load', function() {
+        setTimeout(loadGA, 1500);
+      });
+    }
+
+    function loadGA() {
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PHMH5V5651';
+      script.async = true;
+      script.onload = function() {
+        gtag('js', new Date());
+        gtag('config', 'G-PHMH5V5651', {
+          client_storage: 'none',
+          anonymize_ip: true
+        });
+      };
+      document.head.appendChild(script);
+    }
   </script>
 
   <meta charset="utf-8" />

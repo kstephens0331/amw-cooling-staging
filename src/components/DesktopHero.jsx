@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import hero from '../assets/images/DSC_2135-1920.webp';
 
 export default function HeroSection() {
@@ -23,13 +22,7 @@ export default function HeroSection() {
       {/* CONTENT WRAPPER */}
       <div className="relative z-20 h-full w-full flex flex-col md:flex-row items-start justify-between px-4 sm:px-6 py-6 gap-y-6 md:gap-y-0">
         {/* LEFT CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-           className="self-start text-black text-left max-w-md md:max-w-lg"
-        >
+        <div className="self-start text-black text-left max-w-md md:max-w-lg animate-fade-in-down">
             <h1 className="text-lg md:text-4xl font-bold">Your Trusted HVAC Experts in Texas</h1>
             <p className="text-xs md:text-base font-medium mt-2 mb-4">
             Reliable installations, repairs, and maintenance to keep your home comfortable year-round.
@@ -40,16 +33,10 @@ export default function HeroSection() {
           >
             Schedule Your Consultation
           </Link>
-        </motion.div>
+        </div>
 
         {/* RIGHT REVIEW CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="self-start text-black text-left md:text-right max-w-md md:max-w-lg md:ml-8"
-        >
+        <div className="self-start text-black text-left md:text-right max-w-md md:max-w-lg md:ml-8 animate-fade-in-up-delay">
           <h2 className="text-base md:text-2xl font-bold mb-1">Enjoyed Our Service?</h2>
           <p className="text-xs md:text-base font-medium mb-3">
             Help other homeowners find us — leave a review on Google!
@@ -62,7 +49,7 @@ export default function HeroSection() {
           >
             Leave a Google Review
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,4 @@
 import SEO from '../components/SEO';
-import { motion } from 'framer-motion';
 import nateLogo from '../assets/images/nate.webp';
 import Anjelica from '../assets/images/DSC_2077.webp'
 import Josh from '../assets/images/DSC_2157.webp'
@@ -28,13 +27,7 @@ export default function AboutUs() {
         </section>
 
       {/* Story + Josh */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center pb-12"
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center pb-12 animate-fade-in-up">
         <div className="order-2 lg:order-2 text-sm md:text-base text-gray-700">
           <h3 className="text-2xl font-semibold text-blue-800 mb-4">Our Story</h3>
           <p>
@@ -50,15 +43,10 @@ export default function AboutUs() {
             className="aspect-[1/1] max-w-[300px] object-cover -rotate-45"  loading="lazy" />
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Anjelica Bio */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col lg:flex-row-reverse items-center gap-10 pb-12">
+      <div className="flex flex-col lg:flex-row-reverse items-center gap-10 pb-12 animate-fade-in-up">
                   <div className="w-full lg:w-1/2"><div className='w-[260px] h-[260px] transform rotate-45 overflow-hidden rounded-xl shadow-lg border border-gray-200 bg-white mx-auto'>
           <img src={Anjelica}
           alt="Anjelica - co-owner of AMW Cooling & Heating" 
@@ -73,16 +61,10 @@ export default function AboutUs() {
             As veterans, Josh and Anjelica have always lived by a strong sense of service—first to their country, and now to their community. With more than eight years of HVAC experience, Josh envisioned creating a company built on honesty, expertise, and unwavering dedication to customer care. Their business is founded on the same core values that guided them in the military: integrity, dedication, and a commitment to delivering the highest quality of service. Beyond their work, Josh enjoys quality time with family and exploring the great outdoors. Anjelica shares that same passion for family and giving back to the community.
           </p>
         </div>
-      </motion.div>
+      </div>
 
       {/* Credentials */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col lg:flex-row-reverse items-center gap-10 pb-10"
-      >
+      <div className="flex flex-col lg:flex-row-reverse items-center gap-10 pb-10 animate-fade-in-up">
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h3 className="text-2xl font-semibold text-blue-800 mb-4">Expertise and Credentials</h3>
           <p className="text-gray-700 max-w-xl mx-auto lg:mx-0">
@@ -95,16 +77,10 @@ export default function AboutUs() {
             <img src={nateLogo} alt="NATE Certified" className="w-full h-full object-cover -rotate-45" loading="lazy"/>
           </div>
         </div>
-      </motion.div>
+      </div>
 
         {/* CTA */}
-<motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center pt-12 pb-24"
-      >
+<div className="text-center pt-12 pb-24 animate-fade-in-up">
         <h3 className="text-xl font-semibold text-blue-900 mb-2">Schedule Your Consultation</h3>
         <p className="text-gray-800 max-w-lg mx-auto mb-4">
           At AMW Cooling & Heating, we specialize in a full range of HVAC solutions. Let Josh and Anjelica guide you through the process and deliver results you can rely on.
@@ -112,7 +88,7 @@ export default function AboutUs() {
         <button className="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">
           Schedule a Consultation
         </button>
-      </motion.div>
+      </div>
       </main>
 
       {/* Footer */}
