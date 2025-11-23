@@ -22,3 +22,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Session documentation (not needed for build)
+SESSION-SUMMARY.md
+.claude/
