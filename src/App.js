@@ -3,10 +3,12 @@ import { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
-import InstantContact from './components/InstantContact';
-import ChatBot from './components/ChatBot';
 import { pageview } from './utils/analytics';
 import IncentiveBanner from './components/IncentiveBanner';
+
+// Lazy load interactive components for better performance
+const InstantContact = lazy(() => import('./components/InstantContact'));
+const ChatBot = lazy(() => import('./components/ChatBot'));
 
 
 // Lazy-loaded pages
@@ -214,8 +216,10 @@ function App() {
   }
 />
         </Routes>
-        <InstantContact />
-         <ChatBot />
+        <Suspense fallback={null}>
+          <InstantContact />
+          <ChatBot />
+        </Suspense>
       </Router>
     </div>
    </HelmetProvider>
