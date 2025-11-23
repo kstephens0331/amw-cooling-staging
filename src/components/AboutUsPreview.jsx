@@ -30,7 +30,7 @@ export default function AboutUsPreview() {
 <div className="rounded-xl shadow-lg h-[500px] bg-white overflow-hidden">
   <img
     src={aboutus}
-    alt="Owners"
+    alt="Joshua and Anjelica - veteran-owned AMW Cooling & Heating owners in Conroe TX - licensed HVAC contractors"
     className="w-full h-full object-cover"
     width="480"
     height="600"

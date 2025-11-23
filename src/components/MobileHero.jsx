@@ -7,7 +7,7 @@ export default function MobileHero() {
       {/* Background Image */}
       <img
         src={hero}
-        alt="AMW Cooling & Heating truck at sunset with phone number"
+        alt="AMW Cooling & Heating HVAC service truck in Conroe TX - veteran-owned AC repair and heating company - call (936) 331-1339"
         width="800"
         height="600"
         className="absolute inset-0 w-full h-full object-cover object-bottom"

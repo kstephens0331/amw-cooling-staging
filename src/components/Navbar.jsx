@@ -72,7 +72,7 @@ const Navbar = () => {
     <header className="bg-white shadow-md sticky top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <img src={logo} alt="AMW Logo" className="h-14 w-auto object-contain" />
+          <img src={logo} alt="AMW Cooling & Heating - veteran-owned HVAC company in Conroe TX" className="h-14 w-auto object-contain" />
           <span className="text-lg md:text-2xl font-bold text-blue-600 whitespace-nowrap">
             AMW Cooling & Heating LLC
           </span>
