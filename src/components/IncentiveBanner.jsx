@@ -40,17 +40,17 @@ const IncentiveBanner = () => {
   if (!active || dismissed) return null;
 
   return (
-    <div className="w-full bg-orange-600 text-white">
+    <div className="w-full bg-orange-700 text-white">
       <div className="mx-auto max-w-7xl px-4 py-3 flex items-center gap-3">
         {/* Copy */}
         <div className="flex-1">
           <p className="text-sm md:text-base font-semibold">
-            🔥 Fall Special: <span className="underline decoration-white/60">Get a FREE Dryer Vent Inspection/Cleaning with the Purchase of a Yearly Maintenance Plan!</span>
+            🔥 Fall Special: <span className="underline decoration-white/70">Get a FREE Dryer Vent Inspection/Cleaning with the Purchase of a Yearly Maintenance Plan!</span>
           </p>
-          <p className="text-[12px] md:text-sm text-white/90 mb-1">
+          <p className="text-[12px] md:text-sm text-white mb-1">
             Book by Nov. 30 · Conroe, The Woodlands, Spring & nearby · Licensed & insured · Veteran-owned
           </p>
-          <p className="text-[12px] md:text-sm text-yellow-200 font-medium">
+          <p className="text-[12px] md:text-sm text-yellow-100 font-medium">
             ⭐ Veteran Discounts Available - Please Call
           </p>
         </div>
