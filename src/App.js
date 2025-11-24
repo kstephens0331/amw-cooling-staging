@@ -23,7 +23,6 @@ const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage'));
 const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const HeroLandingPage = lazy(() => import('./components/HeroLandingPage'));
-const ContactUsDuplicate = lazy(() => import('./pages/Contact-us'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 
@@ -116,14 +115,6 @@ function App() {
       </Suspense>
     }
   />
-<Route
-  path="/contact-us"
-  element={
-    <Suspense fallback={<LoadingSpinner />}>
-      <ContactUsDuplicate />
-    </Suspense>
-  }
-/>
 <Route
   path="/blog"
   element={

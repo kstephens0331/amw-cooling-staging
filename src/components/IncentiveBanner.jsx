@@ -70,7 +70,7 @@ const IncentiveBanner = () => {
             Book Online
           </a>
           <a
-            href="tel:19365877612"
+            href="tel:+19363311339"
             className="rounded-md bg-orange-800 text-white text-sm md:text-base font-semibold px-3 py-2 hover:bg-orange-900 transition"
           >
             Call Now

@@ -41,7 +41,7 @@ const faqs = [
         answer: (
           <span>
             Absolutely! We offer after hours emergency HVAC services between the hours of 5pm-9pm because we know comfort can’t wait.{' '}
-            <a href="tel:9363311339" className="text-blue-600 underline hover:text-orange-500">Call us anytime at (936) 331-1339</a> for quick and reliable help. *Additional charges may apply*
+            <a href="tel:+19363311339" className="text-blue-600 underline hover:text-orange-500">Call us anytime at (936) 331-1339</a> for quick and reliable help. *Additional charges may apply*
           </span>
         ),
       },

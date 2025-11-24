@@ -36,7 +36,7 @@ export default function Services() {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-4">
           <a
-            href="tel:555-555-5555"
+            href="tel:+19363311339"
             className="inline-block px-4 py-2 bg-orange-500 text-white rounded shadow hover:bg-orange-600 transition text-xs md:text-sm"
           >
             📞 Call Now
