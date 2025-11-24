@@ -24,9 +24,8 @@ export default function HomePage() {
         fetchpriority="high"
         type="image/jpg"
       />
-      <link rel="preconnect" href="https://a.tile.openstreetmap.org" />
-      <link rel="preconnect" href="https://b.tile.openstreetmap.org" />
-      <link rel="preconnect" href="https://c.tile.openstreetmap.org" />
+      {/* Removed unused preconnect hints - MapSection is lazy-loaded so these connections timeout before use */}
+      {/* DNS prefetch is lightweight and will resolve when map actually loads */}
       <link rel="dns-prefetch" href="https://a.tile.openstreetmap.org" />
       <link rel="dns-prefetch" href="https://b.tile.openstreetmap.org" />
       <link rel="dns-prefetch" href="https://c.tile.openstreetmap.org" />

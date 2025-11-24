@@ -24,8 +24,9 @@
 # AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
 
 # BEGIN Cloudflare Managed content
-# Cloudflare content signals (comment only - not a robots.txt directive)
-# search=yes, ai-train=no
+# NOTE: The following are Cloudflare content signals (comments only - NOT robots.txt directives)
+# These do not affect robot crawling behavior per robots.txt specification
+# Content signals: search=yes, ai-train=no
 # Last updated: 2025-11-23T18:58:00Z
 
 User-Agent: *

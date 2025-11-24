@@ -40,7 +40,7 @@ const IncentiveBanner = () => {
   if (!active || dismissed) return null;
 
   return (
-    <div className="w-full bg-orange-700 text-white">
+    <div className="w-full bg-orange-800 text-white">
       <div className="mx-auto max-w-7xl px-4 py-3 flex items-center gap-3">
         {/* Copy */}
         <div className="flex-1">
@@ -56,7 +56,7 @@ const IncentiveBanner = () => {
         </div>
 
         {/* Countdown */}
-        <div className="hidden md:flex items-center text-sm font-medium bg-white/10 rounded-full px-3 py-1">
+        <div className="hidden md:flex items-center text-sm font-medium bg-orange-900 rounded-full px-3 py-1">
           Ends in&nbsp;
           <span className="font-bold">{days}d {hours}h {minutes}m</span>
         </div>
