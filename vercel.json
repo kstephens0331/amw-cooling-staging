@@ -1,6 +1,8 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "build",
+  "cleanUrls": false,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/static/(.*)",
@@ -52,15 +54,6 @@
     { "source": "/faqs/", "destination": "/faqs", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/static/:path*", "destination": "/static/:path*" },
-    { "source": "/assets/:path*", "destination": "/assets/:path*" },
-    { "source": "/blog/:path*.webp", "destination": "/blog/:path*.webp" },
-    { "source": "/blog/:path*.json", "destination": "/blog/:path*.json" },
-    { "source": "/blog/:path*.md", "destination": "/blog/:path*.md" },
-    { "source": "/favicon.ico", "destination": "/favicon.ico" },
-    { "source": "/manifest.json", "destination": "/manifest.json" },
-    { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/:path*", "destination": "/" }
+    { "source": "/((?!blog)(?!static)(?!assets)(?!favicon\\.ico)(?!manifest\\.json)(?!robots\\.txt)(?!sitemap\\.xml).*)", "destination": "/index.html" }
   ]
 }
