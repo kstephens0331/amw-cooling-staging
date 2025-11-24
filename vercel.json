@@ -54,10 +54,11 @@
   "rewrites": [
     { "source": "/static/(.*)", "destination": "/static/$1" },
     { "source": "/assets/(.*)", "destination": "/assets/$1" },
+    { "source": "/blog/(.*)", "destination": "/blog/$1", "has": [{"type": "header", "key": "accept", "value": "(?!text/html).*"}] },
     { "source": "/favicon.ico", "destination": "/favicon.ico" },
     { "source": "/manifest.json", "destination": "/manifest.json" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/((?!.*\\.(webp|jpg|jpeg|png|json|md)).*)", "destination": "/" }
   ]
 }
