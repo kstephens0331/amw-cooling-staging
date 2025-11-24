@@ -54,7 +54,7 @@
   "rewrites": [
     { "source": "/static/(.*)", "destination": "/static/$1" },
     { "source": "/assets/(.*)", "destination": "/assets/$1" },
-    { "source": "/blog/:file(.*\\.(json|md|webp|jpg|jpeg|png))", "destination": "/blog/:file" },
+    { "source": "/blog/(.*)", "destination": "/blog/$1" },
     { "source": "/favicon.ico", "destination": "/favicon.ico" },
     { "source": "/manifest.json", "destination": "/manifest.json" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
