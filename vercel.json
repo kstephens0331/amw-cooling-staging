@@ -54,8 +54,7 @@
     { "source": "/faqs/", "destination": "/faqs", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "trailingSlash": false,
-  "cleanUrls": false
+    { "source": "/:path*", "destination": "/:path*" },
+    { "source": "/:path*", "destination": "/index.html" }
+  ]
 }
