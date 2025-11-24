@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
+import ErrorBoundary from './components/ErrorBoundary';
 import { pageview } from './utils/analytics';
 import IncentiveBanner from './components/IncentiveBanner';
 
@@ -50,12 +51,13 @@ function ScrollAndTrack() {
 
 function App() {
   return (
-    <HelmetProvider>
-    <div className="bg-white text-gray-800 font-sans">
-      <Router>
-        <ScrollAndTrack />
-        <Navbar />
-        <IncentiveBanner />
+    <ErrorBoundary>
+      <HelmetProvider>
+        <div className="bg-white text-gray-800 font-sans">
+          <Router>
+            <ScrollAndTrack />
+            <Navbar />
+            <IncentiveBanner />
         <Routes>
           <Route
     path="/"
@@ -220,9 +222,10 @@ function App() {
           <InstantContact />
           <ChatBot />
         </Suspense>
-      </Router>
-    </div>
-   </HelmetProvider>
+          </Router>
+        </div>
+      </HelmetProvider>
+    </ErrorBoundary>
   );
 }
 
