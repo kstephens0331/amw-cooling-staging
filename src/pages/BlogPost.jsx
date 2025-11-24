@@ -18,8 +18,8 @@ export default function BlogPost() {
     async function load() {
       try {
         const [mdRes, idxRes] = await Promise.all([
-          fetch(`/blog/${slug}.md`, { cache: 'no-store' }),
-          fetch('/blog/index.json', { cache: 'no-store' })
+          fetch(`/data/blog/${slug}.md`, { cache: 'no-store' }),
+          fetch('/data/blog/index.json', { cache: 'no-store' })
         ]);
 
         const [mdText, indexJson] = await Promise.all([

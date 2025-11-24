@@ -26,3 +26,5 @@ yarn-error.log*
 # Session documentation (not needed for build)
 SESSION-SUMMARY.md
 .claude/
+
+.vercel

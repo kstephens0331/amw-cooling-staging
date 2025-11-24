@@ -13,7 +13,7 @@ export default function Blog() {
   const [selected, setSelected] = useState([]); // array of tag strings
 
   useEffect(() => {
-    fetch('/blog/index.json', { cache: 'no-store' })
+    fetch('/data/blog/index.json', { cache: 'no-store' })
       .then((res) => res.json())
       .then((data) => setPosts(Array.isArray(data) ? data : []))
       .catch(() => setPosts([]))
