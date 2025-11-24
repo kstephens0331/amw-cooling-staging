@@ -2,7 +2,8 @@ import React, { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaYelp, FaBars, FaTimes } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import logo from '../assets/images/FullLogo_Transparent.webp';
+import logo from '../assets/images/FullLogo_Transparent-56.webp';
+import logo2x from '../assets/images/FullLogo_Transparent.webp';
 import VoiceSearch from './VoiceSearch';
 
 const Navbar = () => {
@@ -72,7 +73,14 @@ const Navbar = () => {
     <header className="bg-white shadow-md sticky top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <img src={logo} alt="AMW Cooling & Heating - veteran-owned HVAC company in Conroe TX" className="h-14 w-auto object-contain" />
+          <img
+            src={logo}
+            srcSet={`${logo} 1x, ${logo2x} 2x`}
+            alt="AMW Cooling & Heating - veteran-owned HVAC company in Conroe TX"
+            className="h-14 w-auto object-contain"
+            width="56"
+            height="56"
+          />
           <span className="text-lg md:text-2xl font-bold text-blue-600 whitespace-nowrap">
             AMW Cooling & Heating LLC
           </span>

@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import hero from '../assets/images/DSC_2135-1920.webp';
+import hero400 from '../assets/images/DSC_2135-400.webp';
+import hero769 from '../assets/images/DSC_2135-769.webp';
+import hero800 from '../assets/images/DSC_2135-800.webp';
 
 export default function HeroSection() {
   return (
@@ -7,6 +10,8 @@ export default function HeroSection() {
       {/* Background Image */}
 <img
         src={hero}
+        srcSet={`${hero400} 400w, ${hero769} 769w, ${hero800} 800w, ${hero} 1920w`}
+        sizes="100vw"
         alt="AMW Cooling & Heating HVAC service truck in Conroe TX at sunset - veteran-owned AC repair and heating company - call (936) 331-1339"
         width="1920"
         height="1027"
