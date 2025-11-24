@@ -1,70 +1,205 @@
-# Getting Started with Create React App
+# AMW Cooling & Heating LLC Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Official website for AMW Cooling & Heating, a veteran-owned HVAC company serving Conroe, TX and surrounding Montgomery County areas.
 
-## Available Scripts
+![AMW Cooling & Heating](public/logo192.png)
 
-In the project directory, you can run:
+## 🚀 Tech Stack
 
-### `npm start`
+- **Framework:** React 18.3.1
+- **Routing:** React Router v6
+- **Styling:** Tailwind CSS
+- **Build Tool:** Create React App 5.0.1
+- **Deployment:** Vercel
+- **Blog System:** Markdown files with JSON metadata
+- **AI Integration:** Claude API for chatbot
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📦 Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+```
 
-### `npm test`
+## 🛠️ Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm start          # Start dev server on http://localhost:3000
+npm test           # Run tests (Jest + React Testing Library)
+npm run build      # Production build to /build directory
+npm run generate:sitemap  # Generate sitemap.xml for SEO
+```
 
-### `npm run build`
+## 🔐 Environment Variables
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create a `.env` file in the root directory (never commit this file):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```env
+REACT_APP_CLAUDE_API_KEY=your_claude_api_key_here
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Important:**
+- The `.env` file is in `.gitignore` and should never be committed
+- For production, add environment variables in the Vercel dashboard
+- API keys should only exist in local `.env` or Vercel environment variables
 
-### `npm run eject`
+## 📁 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+amw-cooling-heating/
+├── public/
+│   ├── blog/               # Blog post images only
+│   │   └── *.webp         # Optimized WebP images
+│   ├── data/
+│   │   └── blog/          # Blog post data
+│   │       ├── index.json # Blog post metadata
+│   │       └── *.md       # Markdown blog posts
+│   ├── favicon.ico
+│   ├── logo192.png
+│   ├── logo512.png
+│   └── manifest.json      # PWA manifest
+├── src/
+│   ├── components/        # Reusable React components
+│   │   ├── ErrorBoundary.jsx   # Error handling
+│   │   ├── LoadingSpinner.jsx  # Loading states
+│   │   ├── Navbar.jsx
+│   │   ├── ChatBot.jsx
+│   │   └── ...
+│   ├── pages/            # Route pages
+│   │   ├── HomePage.jsx
+│   │   ├── Blog.jsx
+│   │   ├── BlogPost.jsx
+│   │   ├── Contact.jsx
+│   │   └── services/     # Service-specific pages
+│   └── utils/
+│       ├── analytics.js  # Google Analytics integration
+│       └── logger.js     # Centralized logging utility
+├── .env                  # Environment variables (DO NOT COMMIT)
+├── .gitignore
+├── package.json
+├── tailwind.config.js
+├── vercel.json           # Vercel deployment config
+└── BLOG_IMAGE_FIX.md     # Documentation for blog routing fixes
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📝 Adding New Blog Posts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Create the blog post markdown file:**
+   ```bash
+   public/data/blog/your-post-slug.md
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Add featured image:**
+   ```bash
+   public/blog/your-post-slug.webp
+   # Image must be 1200x630px, optimized WebP format
+   ```
 
-## Learn More
+3. **Update blog index:**
+   Add entry to `public/data/blog/index.json`:
+   ```json
+   {
+     "slug": "your-post-slug",
+     "title": "Your Post Title",
+     "date": "2025-11-24",
+     "excerpt": "Brief description...",
+     "image": "/blog/your-post-slug.webp",
+     "tags": ["tag1", "tag2"]
+   }
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Important:** Always place images in `/public/blog/` and data files in `/public/data/blog/`
+   - See [BLOG_IMAGE_FIX.md](BLOG_IMAGE_FIX.md) for detailed explanation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔒 Security
 
-### Code Splitting
+- All API keys stored in environment variables
+- Content Security Policy (CSP) headers configured in `vercel.json`
+- Error boundary prevents crashes from exposing sensitive information
+- Logger utility removes console logs in production
+- All forms protected against XSS and injection attacks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📊 Performance Optimizations
 
-### Analyzing the Bundle Size
+- **Lazy Loading:** All routes and heavy components use React.lazy()
+- **Code Splitting:** Automatic code splitting with React.lazy()
+- **Image Optimization:** All images in WebP format with responsive sizing
+- **Cookieless Analytics:** Google Analytics configured without cookies
+- **Edge Caching:** Vercel CDN with aggressive cache headers
+- **Bundle Analysis:** Use `npm run analyze` to check bundle size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🌐 Deployment
 
-### Making a Progressive Web App
+The site automatically deploys to Vercel on every push to the `master` branch.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Manual Deployment:**
+```bash
+vercel --prod
+```
 
-### Advanced Configuration
+**Environment Setup:**
+```bash
+# Add environment variables to Vercel
+vercel env add REACT_APP_CLAUDE_API_KEY production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Pull environment variables locally
+vercel env pull
+```
 
-### Deployment
+## 🧪 Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm test                    # Run all tests
+npm test -- --coverage      # Run tests with coverage report
+```
 
-### `npm run build` fails to minify
+**Test Files:**
+- `src/App.test.js` - Basic app rendering
+- Add more test files in `__tests__` directories
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔧 Maintenance
+
+### Update Dependencies
+```bash
+npm update                  # Update minor/patch versions
+npm outdated                # Check for major updates
+```
+
+### Security Audits
+```bash
+npm audit                   # Check for vulnerabilities
+npm audit fix               # Auto-fix vulnerabilities
+```
+
+### Generate Sitemap
+```bash
+npm run generate:sitemap    # Creates public/sitemap.xml
+```
+
+## 📞 Contact & Support
+
+**AMW Cooling & Heating LLC**
+- **Phone:** (936) 331-1339
+- **Email:** admin@amwairconditioning.com
+- **Website:** https://www.amwairconditioning.com
+- **Service Area:** Conroe, The Woodlands, Spring, Montgomery County, TX
+
+**For Development Issues:**
+- Create an issue in the GitHub repository
+- Refer to [BLOG_IMAGE_FIX.md](BLOG_IMAGE_FIX.md) for common blog routing issues
+
+## 📚 Additional Documentation
+
+- [BLOG_IMAGE_FIX.md](BLOG_IMAGE_FIX.md) - Complete guide to blog image routing issues and fixes
+- [Vercel Deployment Docs](https://vercel.com/docs)
+- [React Documentation](https://react.dev)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+
+## 🏆 Credits
+
+Built with ❤️ by StephensCode for AMW Cooling & Heating LLC, a proud veteran-owned business serving North Houston.
+
+---
+
+**Version:** 2.0.0
+**Last Updated:** November 24, 2025
+**License:** Proprietary
