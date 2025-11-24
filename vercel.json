@@ -54,7 +54,11 @@
   "rewrites": [
     { "source": "/static/(.*)", "destination": "/static/$1" },
     { "source": "/assets/(.*)", "destination": "/assets/$1" },
-    { "source": "/blog/:file(.*\\.webp|.*\\.jpg|.*\\.jpeg|.*\\.png|.*\\.json|.*\\.md)", "destination": "/blog/:file" },
+    { "source": "/blog/(.*).webp", "destination": "/blog/$1.webp" },
+    { "source": "/blog/(.*).jpg", "destination": "/blog/$1.jpg" },
+    { "source": "/blog/(.*).png", "destination": "/blog/$1.png" },
+    { "source": "/blog/(.*).json", "destination": "/blog/$1.json" },
+    { "source": "/blog/(.*).md", "destination": "/blog/$1.md" },
     { "source": "/favicon.ico", "destination": "/favicon.ico" },
     { "source": "/manifest.json", "destination": "/manifest.json" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
