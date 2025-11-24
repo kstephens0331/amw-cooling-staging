@@ -1,3 +1,5 @@
+import { logger } from './logger';
+
 export const pageview = (url) => {
   if (window.gtag) {
     window.gtag('config', 'G-PHMH5V5651', {
@@ -5,7 +7,7 @@ export const pageview = (url) => {
       client_storage: 'none',
     });
   } else {
-    console.debug('pageview', url);
+    logger.debug('pageview', url);
   }
 };
 
@@ -14,7 +16,7 @@ export const event = (action, params = {}) => {
   if (window.gtag) {
     window.gtag('event', action, params);
   } else {
-    console.debug('event', action, params);
+    logger.debug('event', action, params);
   }
 };
 

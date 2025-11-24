@@ -5,6 +5,7 @@ import { FcGoogle } from 'react-icons/fc';
 import logo from '../assets/images/FullLogo_Transparent-56.webp';
 import logo2x from '../assets/images/FullLogo_Transparent.webp';
 import VoiceSearch from './VoiceSearch';
+import { logger } from '../utils/logger';
 
 const Navbar = () => {
   // --- top-level hooks (OK) ---
@@ -40,7 +41,7 @@ const Navbar = () => {
 
   const handleVoiceResult = (query) => {
     const q = String(query || '').toLowerCase();
-    console.log('Voice search for:', q);
+    logger.debug('Voice search for:', q);
 
     if (q.includes('about')) {
       speak('Taking you to our About Us page.');

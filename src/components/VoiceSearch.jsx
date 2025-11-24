@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { logger } from '../utils/logger';
 
 const VoiceSearch = ({ onResult }) => {
   const [isListening, setIsListening] = useState(false);
@@ -30,7 +31,7 @@ const VoiceSearch = ({ onResult }) => {
     };
 
     recognition.onerror = (event) => {
-      console.error("Speech recognition error", event);
+      logger.error("Speech recognition error", event);
       setIsListening(false);
     };
 

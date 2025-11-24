@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaRobot, FaTimes } from 'react-icons/fa';
 import axios from 'axios';
+import { logger } from '../utils/logger';
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +47,7 @@ export default function ChatBot() {
         }, 500);
       }
     } catch (error) {
-      console.error('Chatbot Error:', error);
+      logger.error('Chatbot Error:', error);
       setMessages((prev) => [
         ...prev,
         { from: 'bot', text: "Oops! Something went wrong. Please try again or call us at (936) 331-1339 for immediate assistance." },
@@ -76,7 +77,7 @@ export default function ChatBot() {
       setShowContactForm(false);
       setContactFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
-      console.error('Contact form error:', error);
+      logger.error('Contact form error:', error);
       setMessages((prev) => [
         ...prev,
         { from: 'bot', text: "Sorry, there was an issue submitting your information. Please call us directly at (936) 331-1339." },
@@ -103,7 +104,7 @@ export default function ChatBot() {
 
         setChatHistorySent(true);
       } catch (error) {
-        console.error('Failed to send chat history:', error);
+        logger.error('Failed to send chat history:', error);
         // Still close the chat even if email fails
       }
     }

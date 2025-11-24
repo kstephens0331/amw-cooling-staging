@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import ErrorBoundary from './components/ErrorBoundary';
+import LoadingSpinner from './components/LoadingSpinner';
 import { pageview } from './utils/analytics';
 import IncentiveBanner from './components/IncentiveBanner';
 
@@ -62,7 +63,7 @@ function App() {
           <Route
     path="/"
     element={
-      <Suspense fallback={<div>Loading Home...</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <HomePage />
       </Suspense>
     }
@@ -70,7 +71,7 @@ function App() {
   <Route
     path="/about"
     element={
-      <Suspense fallback={<div>Loading About Us...</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <AboutUs />
       </Suspense>
     }
@@ -78,7 +79,7 @@ function App() {
   <Route
     path="/services"
     element={
-      <Suspense fallback={<div>Loading Services...</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <Services />
       </Suspense>
     }
@@ -86,7 +87,7 @@ function App() {
   <Route
     path="/faqs"
     element={
-      <Suspense fallback={<div>Loading FAQs...</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <FAQs />
       </Suspense>
     }
@@ -94,7 +95,7 @@ function App() {
   <Route
     path="/financing"
     element={
-      <Suspense fallback={<div>Loading Financing...</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <Financing />
       </Suspense>
     }
@@ -102,7 +103,7 @@ function App() {
   <Route
     path="/testimonials"
     element={
-      <Suspense fallback={<div>Loading Testimonials...</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <TestimonialsPage />
       </Suspense>
     }
@@ -110,7 +111,7 @@ function App() {
   <Route
     path="/contact"
     element={
-      <Suspense fallback={<div>Loading Contact Page...</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <Contact />
       </Suspense>
     }
@@ -118,7 +119,7 @@ function App() {
 <Route
   path="/contact-us"
   element={
-    <Suspense fallback={<div>Loading Contact Page...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <ContactUsDuplicate />
     </Suspense>
   }
@@ -126,7 +127,7 @@ function App() {
 <Route
   path="/blog"
   element={
-    <Suspense fallback={<div>Loading Blog...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <Blog />
     </Suspense>
   }
@@ -135,7 +136,7 @@ function App() {
 <Route
   path="/blog/:slug"
   element={
-    <Suspense fallback={<div>Loading Post...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <BlogPost />
     </Suspense>
   }
@@ -145,7 +146,7 @@ function App() {
 <Route
   path="/services/ac-repair"
   element={
-    <Suspense fallback={<div>Loading AC Repair...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <ACRepair />
     </Suspense>
   }
@@ -153,7 +154,7 @@ function App() {
 <Route
   path="/services/heating-repair"
   element={
-    <Suspense fallback={<div>Loading Heating Repair...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <HeatingRepair />
     </Suspense>
   }
@@ -161,7 +162,7 @@ function App() {
 <Route
   path="/services/hvac-maintenance"
   element={
-    <Suspense fallback={<div>Loading HVAC Maintenance...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <HVACMaintenance />
     </Suspense>
   }
@@ -169,7 +170,7 @@ function App() {
 <Route
   path="/services/indoor-air-quality"
   element={
-    <Suspense fallback={<div>Loading Indoor Air Quality...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <IndoorAirQuality />
     </Suspense>
   }
@@ -177,7 +178,7 @@ function App() {
 <Route
   path="/services/smart-thermostats"
   element={
-    <Suspense fallback={<div>Loading Smart Thermostats...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <SmartThermostats />
     </Suspense>
   }
@@ -185,7 +186,7 @@ function App() {
 <Route
   path="/services/dryer-vent-cleaning"
   element={
-    <Suspense fallback={<div>Loading Dryer Vent Cleaning...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <DryerVentCleaning />
     </Suspense>
   }
@@ -195,7 +196,7 @@ function App() {
 <Route
   path="/locations/conroe-tx"
   element={
-    <Suspense fallback={<div>Loading Conroe Services...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <ConroeTX />
     </Suspense>
   }
@@ -204,7 +205,7 @@ function App() {
   <Route
     path="*"
     element={
-      <Suspense fallback={<div>Loading Not Found Page...</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <NotFound />
       </Suspense>
     }
@@ -212,7 +213,7 @@ function App() {
   <Route
   path="/hero"
   element={
-    <Suspense fallback={<div>Loading Hero...</div>}>
+    <Suspense fallback={<LoadingSpinner />}>
       <HeroLandingPage />
     </Suspense>
   }
