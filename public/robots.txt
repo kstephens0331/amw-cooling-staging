@@ -26,6 +26,7 @@
 # BEGIN Cloudflare Managed content
 # Cloudflare content signals (comment only - not a robots.txt directive)
 # search=yes, ai-train=no
+# Last updated: 2025-11-23
 
 User-Agent: *
 Allow: /

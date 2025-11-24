@@ -9,7 +9,7 @@ export default function HeroSection() {
         src={hero}
         alt="AMW Cooling & Heating HVAC service truck in Conroe TX at sunset - veteran-owned AC repair and heating company - call (936) 331-1339"
         width="1920"
-        height="1080"
+        height="1027"
         className="absolute inset-0 w-full h-full object-cover object-bottom"
         loading="eager"
         decoding="async"
