@@ -54,6 +54,6 @@
     { "source": "/faqs/", "destination": "/faqs", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/((?!blog)(?!static)(?!assets)(?!favicon\\.ico)(?!manifest\\.json)(?!robots\\.txt)(?!sitemap\\.xml).*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
