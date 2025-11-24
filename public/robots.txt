@@ -1,68 +1,12 @@
-# As a condition of accessing this website, you agree to abide by the following
-# content signals:
+# AMW Cooling & Heating LLC - Robots.txt
+# Website: https://amwairconditioning.com
+# Last updated: 2025-11-24
 
-# (a)  If a content-signal = yes, you may collect content for the corresponding
-#      use.
-# (b)  If a content-signal = no, you may not collect content for the
-#      corresponding use.
-# (c)  If the website operator does not include a content signal for a
-#      corresponding use, the website operator neither grants nor restricts
-#      permission via content signal with respect to the corresponding use.
-
-# The content signals and their meanings are:
-
-# search:   building a search index and providing search results (e.g., returning
-#           hyperlinks and short excerpts from your website's contents). Search does not
-#           include providing AI-generated search summaries.
-# ai-input: inputting content into one or more AI models (e.g., retrieval
-#           augmented generation, grounding, or other real-time taking of content for
-#           generative AI search answers).
-# ai-train: training or fine-tuning AI models.
-
-# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF
-# RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT
-# AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
-
-# BEGIN Cloudflare Managed content
-# NOTE: The following are Cloudflare content signals (comments only - NOT robots.txt directives)
-# These do not affect robot crawling behavior per robots.txt specification
-# Content signals: search=yes, ai-train=no
-# Last updated: 2025-11-23T18:58:00Z
-
-User-Agent: *
+# Default rule - allow all legitimate bots
+User-agent: *
 Allow: /
 
-# Allow Claude and GPT for AI search/assistance
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-# Block other AI Training Bots
-User-agent: Amazonbot
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: meta-externalagent
-Disallow: /
-
-# END Cloudflare Managed Content
-
-# BEGIN AMW SEO Configuration
-
-# Allow all major search engines
+# Allow search engine bots explicitly
 User-agent: Googlebot
 Allow: /
 
@@ -81,7 +25,33 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Block admin areas and sensitive directories
+# Allow AI search assistants (not training)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Block AI training bots
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+# Block access to sensitive directories
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
@@ -89,41 +59,5 @@ Disallow: /api/
 Disallow: /.git/
 Disallow: /node_modules/
 
-# Allow main pages
-Allow: /
-Allow: /about
-Allow: /contact
-Allow: /contact-us
-Allow: /faqs
-Allow: /faq
-Allow: /financing
-Allow: /testimonials
-Allow: /reviews
-
-# Allow service pages
-Allow: /services/
-Allow: /services/ac-repair
-Allow: /services/heating-repair
-Allow: /services/hvac-maintenance
-Allow: /services/indoor-air-quality
-Allow: /services/smart-thermostats
-Allow: /services/dryer-vent-cleaning
-Allow: /services/ductwork
-Allow: /services/thermostat-installation
-
-# Allow location pages
-Allow: /locations/
-Allow: /locations/conroe-tx
-Allow: /locations/the-woodlands-tx
-Allow: /locations/montgomery-tx
-Allow: /locations/willis-tx
-Allow: /locations/cut-and-shoot-tx
-
-# Allow blog
-Allow: /blog/
-Allow: /blog/*
-
 # Sitemap location
 Sitemap: https://amwairconditioning.com/sitemap.xml
-
-# END AMW SEO Configuration
