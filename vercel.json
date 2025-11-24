@@ -52,15 +52,15 @@
     { "source": "/faqs/", "destination": "/faqs", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/static/(.*)", "destination": "/static/$1" },
-    { "source": "/assets/(.*)", "destination": "/assets/$1" },
-    { "source": "/blog/(.*).webp", "destination": "/blog/$1.webp" },
-    { "source": "/blog/(.*).json", "destination": "/blog/$1.json" },
-    { "source": "/blog/(.*).md", "destination": "/blog/$1.md" },
+    { "source": "/static/:path*", "destination": "/static/:path*" },
+    { "source": "/assets/:path*", "destination": "/assets/:path*" },
+    { "source": "/blog/:path*.webp", "destination": "/blog/:path*.webp" },
+    { "source": "/blog/:path*.json", "destination": "/blog/:path*.json" },
+    { "source": "/blog/:path*.md", "destination": "/blog/:path*.md" },
     { "source": "/favicon.ico", "destination": "/favicon.ico" },
     { "source": "/manifest.json", "destination": "/manifest.json" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/:path*", "destination": "/" }
   ]
 }
