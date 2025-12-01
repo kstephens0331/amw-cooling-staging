@@ -7,7 +7,7 @@ const CALENDLY_URL = 'https://calendly.com/admin-amwairconditioning?embed_domain
 // Helper: within promo window (local time)
 const isActivePromoWindow = (now = new Date()) => {
   const start = new Date(2025, 9, 1, 0, 0, 0);  // Oct 1, 2025
-  const end   = new Date(2025, 11, 1, 0, 0, 0);  // Dec 1, 2025 (exclusive)
+  const end   = new Date(2026, 0, 1, 0, 0, 0);  // Jan 1, 2026 (exclusive)
   return now >= start && now < end;
 };
 
@@ -25,13 +25,13 @@ const IncentiveBanner = () => {
     window.localStorage.setItem('amw_promo_dec2025_dismissed', '1');
   };
 
-  // Countdown to Dec 1, 2025
+  // Countdown to Jan 1, 2026
   const [now, setNow] = useState(new Date());
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(id);
   }, []);
-  const deadline = new Date(2025, 11, 1, 0, 0, 0);
+  const deadline = new Date(2026, 0, 1, 0, 0, 0);
   const remainingMs = Math.max(0, deadline - now);
   const days    = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
   const hours   = Math.floor((remainingMs / (1000 * 60 * 60)) % 24);
@@ -41,14 +41,14 @@ const IncentiveBanner = () => {
 
   return (
     <div className="w-full bg-orange-800 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-3 flex items-center gap-3">
+      <div className="mx-auto max-w-screen-2xl px-4 py-3 flex items-center gap-3">
         {/* Copy */}
         <div className="flex-1">
           <p className="text-sm md:text-base font-semibold">
-            🔥 Fall Special: <span className="underline decoration-white/70">Get a FREE Dryer Vent Inspection/Cleaning with the Purchase of a Yearly Maintenance Plan!</span>
+            🔥 December Special: <span className="underline decoration-white/70">Get a FREE Dryer Vent Inspection/Cleaning with the Purchase of a Yearly Maintenance Plan!</span>
           </p>
           <p className="text-[12px] md:text-sm text-white mb-1">
-            Book by Nov. 30 · Conroe, The Woodlands, Spring & nearby · Licensed & insured · Veteran-owned
+            Book by Dec. 31 · Conroe, The Woodlands, Spring & nearby · Licensed & insured · Veteran-owned
           </p>
           <p className="text-[12px] md:text-sm text-yellow-100 font-medium">
             ⭐ Veteran Discounts Available - Please Call
