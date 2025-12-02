@@ -20,14 +20,26 @@ export default function Blog() {
       .finally(() => setLoading(false));
   }, []);
 
-  // all unique tags (sorted)
+  // all unique tags (sorted by frequency, then alphabetically)
   const allTags = useMemo(() => {
-    const set = new Set();
+    const tagCounts = {};
     for (const p of posts) {
-      (p.tags || []).forEach(t => set.add(String(t)));
+      (p.tags || []).forEach(t => {
+        const tag = String(t);
+        tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+      });
     }
-    return Array.from(set).sort((a, b) => a.localeCompare(b));
+    // Sort by count (descending), then alphabetically
+    return Object.keys(tagCounts).sort((a, b) => {
+      const countDiff = tagCounts[b] - tagCounts[a];
+      if (countDiff !== 0) return countDiff;
+      return a.localeCompare(b);
+    });
   }, [posts]);
+
+  // Show only top tags unless expanded
+  const [showAllTags, setShowAllTags] = useState(false);
+  const visibleTags = showAllTags ? allTags : allTags.slice(0, 8);
 
   // sorted posts (newest first)
   const sorted = useMemo(() => {
@@ -117,27 +129,37 @@ export default function Blog() {
           </div>
 
           {allTags.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {allTags.map((t) => {
-                const active = selected.includes(t);
-                return (
+            <div className="mt-3">
+              <div className="flex flex-wrap gap-2 items-center">
+                {visibleTags.map((t) => {
+                  const active = selected.includes(t);
+                  return (
+                    <button
+                      key={t}
+                      onClick={() => toggleTag(t)}
+                      className={
+                        "text-xs px-3 py-1 rounded-full border transition " +
+                        (active
+                          ? "bg-blue-600 text-white border-blue-600"
+                          : "bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100 hover:border-gray-300")
+                      }
+                      aria-pressed={active}
+                      aria-label={`Filter by ${t}`}
+                      title={`Filter by ${t}`}
+                    >
+                      {t}
+                    </button>
+                  );
+                })}
+                {allTags.length > 8 && (
                   <button
-                    key={t}
-                    onClick={() => toggleTag(t)}
-                    className={
-                      "text-xs md:text-sm px-3 py-1.5 rounded-full border transition " +
-                      (active
-                        ? "bg-blue-600 text-white border-blue-700"
-                        : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50")
-                    }
-                    aria-pressed={active}
-                    aria-label={`Filter by ${t}`}
-                    title={`Filter by ${t}`}
+                    onClick={() => setShowAllTags(!showAllTags)}
+                    className="text-xs px-3 py-1 text-blue-600 hover:text-blue-700 font-medium"
                   >
-                    {t}
+                    {showAllTags ? '− Show less' : `+ ${allTags.length - 8} more`}
                   </button>
-                );
-              })}
+                )}
+              </div>
             </div>
           )}
         </div>
