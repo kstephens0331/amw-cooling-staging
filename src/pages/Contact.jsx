@@ -111,7 +111,7 @@ export default function Contact() {
                 <h3 className="text-lg font-bold text-blue-900">Email Us</h3>
               </div>
               <p className="text-gray-600 mb-3">Send us a message and we'll respond promptly.</p>
-              <a href="mailto:admin@amwairconditioning.com" className="text-blue-600 font-semibold hover:text-blue-700 text-sm break-all">admin@amwairconditioning.com</a>
+              <a href="mailto:admin@amwairconditioning.com" className="text-blue-600 font-semibold hover:text-blue-700 text-sm whitespace-nowrap">admin@amwairconditioning.com</a>
             </div>
 
             {/* Location Card */}

@@ -123,11 +123,8 @@ const DryerVentCleaning = () => {
             <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
               <li><strong>Complete Inspection</strong> - Examine entire vent system from dryer to exterior</li>
               <li><strong>Disconnect & Access</strong> - Safely disconnect dryer and access full vent line</li>
-              <li><strong>Specialized Equipment</strong> - High-powered vacuum with rotary brush system</li>
-              <li><strong>Full-Length Cleaning</strong> - Remove ALL lint from entire vent length, not just near the dryer</li>
-              <li><strong>Exterior Vent Cleaning</strong> - Clean and verify proper function of exterior vent hood</li>
+              <li><strong>Full-Length Cleaning</strong> - Remove all lint from entire vent length, not just near the dryer</li>
               <li><strong>Behind-Dryer Cleaning</strong> - Remove lint accumulation behind and around dryer</li>
-              <li><strong>Dryer Lint Trap Cleaning</strong> - Deep clean mesh filter screen</li>
               <li><strong>Connection Inspection</strong> - Check for damage, disconnections, or improper installation</li>
               <li><strong>Airflow Testing</strong> - Verify proper exhaust airflow after cleaning</li>
               <li><strong>Reconnection & Testing</strong> - Properly reconnect dryer and run test cycle</li>
@@ -145,7 +142,6 @@ const DryerVentCleaning = () => {
               <li><strong>Prevent Moisture Damage</strong> - Proper venting prevents humidity problems in laundry area</li>
               <li><strong>Eliminate Odors</strong> - Remove musty smells from trapped moisture</li>
               <li><strong>Reduced Wear on Clothes</strong> - Proper drying is gentler on fabrics</li>
-              <li><strong>Carbon Monoxide Safety</strong> - (Gas dryers) Ensure proper exhaust of combustion gases</li>
             </ul>
 
             <h3 className="text-xl font-bold text-blue-900 mb-3 border-l-4 border-blue-600 pl-3">
@@ -170,10 +166,7 @@ const DryerVentCleaning = () => {
             <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
               <li><strong>Lint Blockages</strong> - Complete or partial obstructions preventing proper airflow</li>
               <li><strong>Damaged Vent Lines</strong> - Crushed, torn, or disconnected vent sections</li>
-              <li><strong>Improper Installation</strong> - Wrong materials, excessive length, too many bends</li>
               <li><strong>Missing or Damaged Exterior Vent</strong> - Broken vent hood allowing pest entry</li>
-              <li><strong>Flexible Plastic/Foil Vents</strong> - Unsafe materials that should be replaced</li>
-              <li><strong>Vent Too Long</strong> - Exceeding manufacturer recommendations for vent length</li>
               <li><strong>Bird Nests or Pest Blockages</strong> - Animals nesting in exterior vent opening</li>
             </ul>
 

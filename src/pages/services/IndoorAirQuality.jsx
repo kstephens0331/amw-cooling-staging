@@ -141,7 +141,7 @@ const IndoorAirQuality = () => {
               <ul className="list-disc list-inside space-y-2 text-gray-700">
                 <li><strong>Bacteria & Virus Elimination</strong> - UV-C light neutralizes airborne pathogens before they circulate</li>
                 <li><strong>Mold Prevention</strong> - Prevents mold growth on evaporator coils in Conroe's humid climate</li>
-                <li><strong>24/7 Protection</strong> - Continuous purification whenever your HVAC system operates</li>
+                <li><strong>Continuous Protection</strong> - Purification whenever your HVAC system operates</li>
                 <li><strong>Chemical-Free</strong> - No ozone or chemical byproducts, safe for all family members</li>
                 <li><strong>Reduced Maintenance</strong> - Keeps coils cleaner, improving system efficiency</li>
               </ul>

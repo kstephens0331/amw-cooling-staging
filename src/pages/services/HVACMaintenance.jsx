@@ -62,7 +62,7 @@ const HVACMaintenance = () => {
                 (936) 331-1339
               </a>
               <Link
-                to="/financing"
+                to="/contact"
                 className="inline-flex items-center gap-2 bg-white text-blue-900 px-6 py-3 rounded-lg hover:bg-blue-50 transition font-semibold"
               >
                 <FaCalendarCheck className="w-4 h-4" />
@@ -191,7 +191,7 @@ const HVACMaintenance = () => {
                   (936) 331-1339
                 </a>
                 <Link
-                  to="/financing"
+                  to="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-white text-blue-900 px-8 py-4 rounded-lg hover:bg-blue-50 transition font-bold text-lg"
                 >
                   <FaCalendarCheck className="w-5 h-5" />

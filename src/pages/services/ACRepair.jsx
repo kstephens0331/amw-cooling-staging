@@ -11,7 +11,7 @@ const ACRepair = () => {
   return (
     <>
       <SEO
-        title="AC Repair Conroe TX | 24/7 Emergency Service | AMW Cooling"
+        title="AC Repair Conroe TX | Emergency Service | AMW Cooling"
         description="Fast, professional AC repair in Conroe, TX. Licensed technicians, same-day service available. Call (936) 331-1339 for expert air conditioning repair."
         canonical="https://amwairconditioning.com/services/ac-repair"
         keywords="AC repair Conroe, air conditioning repair Conroe TX, emergency AC repair, AC service Conroe"
@@ -101,15 +101,6 @@ const ACRepair = () => {
               <li><strong>Water leaks</strong> - Clogged drain lines or damaged drain pans</li>
               <li><strong>High energy bills</strong> - Inefficient operation or system age</li>
             </ul>
-
-            <h3 className="text-xl font-bold text-blue-900 mb-3 border-l-4 border-blue-600 pl-3">
-              24/7 Emergency AC Repair
-            </h3>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              We understand AC emergencies don't wait for business hours. That's why
-              AMW Cooling & Heating offers 24/7 emergency air conditioning repair in
-              Conroe and surrounding areas. Call <a href="tel:+19363311339" className="text-blue-600 hover:underline">(936) 331-1339</a> anytime.
-            </p>
 
             <h3 className="text-xl font-bold text-blue-900 mb-3 border-l-4 border-blue-600 pl-3">
               Our AC Repair Process

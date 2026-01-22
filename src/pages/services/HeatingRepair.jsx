@@ -115,9 +115,8 @@ const HeatingRepair = () => {
             </h3>
             <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
               <li>Gas furnaces</li>
-              <li>Electric furnaces</li>
+              <li>Electric air handlers</li>
               <li>Heat pumps</li>
-              <li>Hybrid heating systems</li>
               <li>Ductless mini-split systems</li>
               <li>All major brands and models</li>
             </ul>

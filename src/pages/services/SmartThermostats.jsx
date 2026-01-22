@@ -164,12 +164,9 @@ const SmartThermostats = () => {
             </h3>
             <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
               <li><strong>Compatibility Check</strong> - Verify your HVAC system works with your chosen thermostat</li>
-              <li><strong>Professional Wiring</strong> - Safe removal of old thermostat and expert installation of new unit</li>
               <li><strong>Wi-Fi Configuration</strong> - Connect thermostat to your home network for remote access</li>
-              <li><strong>Account Setup</strong> - Create and configure your app account for smartphone control</li>
               <li><strong>Schedule Programming</strong> - Input your preferred temperatures and schedule</li>
               <li><strong>Sensor Placement</strong> - Optimal positioning of room sensors (if applicable)</li>
-              <li><strong>Voice Assistant Integration</strong> - Connect to Alexa, Google Home, or Siri</li>
               <li><strong>Tutorial & Training</strong> - Complete walkthrough of all features and functions</li>
               <li><strong>System Testing</strong> - Verify heating, cooling, and fan controls work properly</li>
             </ul>
@@ -180,8 +177,6 @@ const SmartThermostats = () => {
             <ul className="list-disc list-inside space-y-2 mb-6 text-gray-700">
               <li><strong>Remote Control</strong> - Adjust temperature from anywhere using your smartphone</li>
               <li><strong>Learning Capabilities</strong> - Automatically adapts to your routine and preferences</li>
-              <li><strong>Geofencing</strong> - Uses your phone's location to know when you're away</li>
-              <li><strong>Energy Reports</strong> - Track usage and identify opportunities to save more</li>
               <li><strong>Weather Integration</strong> - Adjusts based on forecast to optimize efficiency</li>
               <li><strong>Voice Control</strong> - "Alexa, set temperature to 72 degrees"</li>
               <li><strong>Multi-Zone Control</strong> - Different temperatures for different rooms (with compatible systems)</li>
