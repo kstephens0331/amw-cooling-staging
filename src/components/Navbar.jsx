@@ -19,8 +19,8 @@ const Navbar = () => {
             alt="AMW Cooling & Heating - veteran-owned HVAC company in Conroe TX"
             className="h-14 md:h-16 w-auto object-contain"
           />
-          <span className="text-lg md:text-2xl font-bold whitespace-nowrap">
-            <span className="text-blue-600">AMW Cooling & </span><span className="text-red-500">Heating</span><span className="text-blue-600"> LLC</span>
+          <span className="text-base md:text-lg lg:text-xl xl:text-2xl font-bold whitespace-nowrap">
+            <span className="text-blue-600">AMW Cooling & </span><span className="text-red-500">Heating</span><span className="text-blue-600 hidden sm:inline"> LLC</span>
           </span>
         </Link>
 

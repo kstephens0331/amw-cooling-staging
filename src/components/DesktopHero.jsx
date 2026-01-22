@@ -17,9 +17,9 @@ export default function HeroSection() {
         <div className="absolute inset-y-0 left-0 w-[40%] bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
       </div>
 
-      {/* Google Review CTA - Center Right */}
-      <div className="absolute top-1/4 -translate-y-1/2 right-6 lg:right-12 z-10">
-        <div className="bg-white rounded-xl shadow-lg px-5 py-4 text-center max-w-xs">
+      {/* Google Review CTA - Center Right (hidden on smaller screens) */}
+      <div className="hidden lg:block absolute top-1/4 -translate-y-1/2 right-6 xl:right-12 z-10">
+        <div className="bg-white rounded-xl shadow-lg px-4 xl:px-5 py-4 text-center max-w-xs">
           <h3 className="text-xl font-extrabold text-gray-900 mb-2">Enjoyed Our Service?</h3>
           <p className="text-sm font-medium text-gray-700 mb-3">Help other homeowners find us — leave a review on Google!</p>
           <a
@@ -54,19 +54,19 @@ export default function HeroSection() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+          <div className="flex flex-col md:flex-row gap-3 lg:gap-4 mb-10">
             <a
               href="tel:+19363311339"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-red-500 text-white rounded-lg shadow-lg hover:bg-red-600 transition font-bold text-lg"
+              className="inline-flex items-center justify-center gap-2 lg:gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-red-500 text-white rounded-lg shadow-lg hover:bg-red-600 transition font-bold text-base lg:text-lg"
             >
-              <FaPhone className="w-5 h-5" />
+              <FaPhone className="w-4 h-4 lg:w-5 lg:h-5" />
               (936) 331-1339
             </a>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-blue-900 rounded-lg shadow-lg hover:bg-blue-50 transition font-bold text-lg"
+              className="inline-flex items-center justify-center gap-2 lg:gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-white text-blue-900 rounded-lg shadow-lg hover:bg-blue-50 transition font-bold text-base lg:text-lg"
             >
-              <FaCalendarCheck className="w-5 h-5" />
+              <FaCalendarCheck className="w-4 h-4 lg:w-5 lg:h-5" />
               Schedule Service
             </Link>
           </div>
